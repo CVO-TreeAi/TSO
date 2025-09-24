@@ -167,7 +167,7 @@ class CoreDataManager: ObservableObject {
             // Tree measurements
             cdLineItem.treeHeight = lineItem.height ?? 0
             cdLineItem.treeDBH = lineItem.dbh ?? 0
-            cdLineItem.treeCanopy = lineItem.canopySpread ?? 0
+            cdLineItem.treeCanopy = (lineItem.canopyRadius ?? 0) * 2 // Store as diameter
             cdLineItem.trimPercent = lineItem.trimPercent ?? 0
 
             // Stump measurements
@@ -178,8 +178,8 @@ class CoreDataManager: ObservableObject {
             cdLineItem.acres = lineItem.acres ?? 0
             cdLineItem.maxDBH = lineItem.maxDBH ?? 0
 
-            // Complexity
-            cdLineItem.complexityMultiplier = lineItem.complexityMultiplier
+            // Complexity - calculate from accessDifficulty
+            cdLineItem.complexityMultiplier = lineItem.accessDifficulty
             cdLineItem.nearStructure = lineItem.nearStructure
             cdLineItem.powerLines = lineItem.powerLines
             cdLineItem.slope = lineItem.slope

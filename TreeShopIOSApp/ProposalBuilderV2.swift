@@ -69,12 +69,13 @@ struct ProposalLineItem: Identifiable {
     // Tree-specific measurements
     var height: Double? // feet
     var dbh: Double? // diameter in inches
-    var canopySpread: Double? // feet
+    var canopyRadius: Double? // feet (radius, not diameter)
     var trimPercent: Double? // for trimming
 
     // Stump-specific
     var stumpDiameter: Double? // inches
-    var grindDepth: Double? = 8 // inches
+    var stumpHeightAboveGrade: Double? = 1 // feet
+    var grindDepth: Double? = 1 // feet below grade
 
     // Land clearing
     var acres: Double?
@@ -87,45 +88,62 @@ struct ProposalLineItem: Identifiable {
     var slope: Bool = false
 
     // Calculated fields
-    var treeScore: Double {
+    var baseTreeScore: Double {
         guard let height = height, let dbh = dbh else { return 0 }
-        let canopy = canopySpread ?? 0
-        return height + (dbh * 2) + canopy
+        let radius = canopyRadius ?? 15 // default 15ft radius if not specified
+        let canopyDiameter = radius * 2
+        let dbhInFeet = dbh / 12.0
+        return height * canopyDiameter * dbhInFeet
     }
 
-    var complexityMultiplier: Double {
-        var multiplier = accessDifficulty
-        if nearStructure { multiplier *= 1.3 }
-        if powerLines { multiplier *= 1.4 }
-        if slope { multiplier *= 1.2 }
-        return multiplier
+    var afissHazardImpact: Double {
+        var impact = 0.0
+        if nearStructure { impact += 0.25 }
+        if powerLines { impact += 0.25 }
+        if slope { impact += 0.15 }
+        // Add access difficulty factor
+        impact += (accessDifficulty - 1.0) * 0.35
+        return baseTreeScore * impact
+    }
+
+    var treeScore: Double {
+        return baseTreeScore + afissHazardImpact
+    }
+
+    var stumpScore: Double {
+        guard let diameter = stumpDiameter else { return 0 }
+        let heightAbove = stumpHeightAboveGrade ?? 1
+        let depthGrind = grindDepth ?? 1
+        let baseScore = (heightAbove + depthGrind) * Double(diameter)
+        let afiss = afissHazardImpact * 0.1 // Use 10% of tree AFISS for stump
+        return baseScore + afiss
     }
 
     var adjustedScore: Double {
-        if type == .treeTrimming, let percent = trimPercent {
-            return treeScore * (percent / 100) * complexityMultiplier
+        if type == .stumpGrinding {
+            return stumpScore
+        } else if type == .treeTrimming, let percent = trimPercent {
+            return treeScore * (percent / 100)
         }
-        return treeScore * complexityMultiplier
+        return treeScore
     }
 
     var calculatedPrice: Double {
         switch type {
         case .treeRemoval:
-            // Price based on tree score
-            let basePrice = adjustedScore * 4 // $4 per point
-            return max(basePrice, type.baseRate) * quantity
+            // Price based on tree score - $0.85 per point
+            let basePrice = adjustedScore * 0.85
+            return max(basePrice, 850) * quantity // $850 minimum
 
         case .treeTrimming:
-            // Price based on percentage of tree
-            let basePrice = adjustedScore * 3 // $3 per adjusted point
-            return max(basePrice, type.baseRate) * quantity
+            // Price based on tree score - $1.10 per point (already adjusted for trim %)
+            let basePrice = adjustedScore * 1.10
+            return max(basePrice, 500) * quantity // $500 minimum
 
         case .stumpGrinding:
-            // Price based on diameter and depth
-            let diameter = stumpDiameter ?? 12
-            let depth = grindDepth ?? 8
-            let basePrice = diameter * depth * 2.5 // $2.50 per inch²
-            return max(basePrice, type.baseRate) * quantity
+            // Price based on stump score - $1.75 per point
+            let basePrice = adjustedScore * 1.75
+            return max(basePrice, 150) * quantity // $150 minimum
 
         case .forestryMulching:
             // Price per acre with DBH factor
@@ -170,7 +188,9 @@ struct ProposalLineItem: Identifiable {
 
         case .stumpGrinding:
             if let diameter = stumpDiameter {
-                return "\(Int(diameter))\" stump, \(Int(grindDepth ?? 8))\" deep"
+                let heightAbove = stumpHeightAboveGrade ?? 1
+                let depth = grindDepth ?? 1
+                return "\(Int(diameter))\" stump, \(Int(heightAbove))ft above, \(Int(depth))ft grind"
             }
             return "Stump grinding"
 
@@ -411,7 +431,7 @@ struct LineItemRow: View {
             }
 
             // Complexity indicators
-            if item.complexityMultiplier > 1.0 {
+            if item.accessDifficulty > 1.0 || item.nearStructure || item.powerLines || item.slope {
                 HStack(spacing: 8) {
                     if item.nearStructure {
                         Tag(text: "Near Structure", color: .orange)
@@ -484,17 +504,15 @@ struct AddLineItemView: View {
                     TreeMeasurementsSection(
                         height: $lineItem.height,
                         dbh: $lineItem.dbh,
-                        canopySpread: $lineItem.canopySpread,
+                        canopyRadius: $lineItem.canopyRadius,
                         trimPercent: lineItem.type == .treeTrimming ? $lineItem.trimPercent : .constant(nil)
                     )
 
                 case .stumpGrinding:
                     StumpMeasurementsSection(
                         diameter: $lineItem.stumpDiameter,
-                        depth: Binding(
-                            get: { lineItem.grindDepth ?? 8 },
-                            set: { lineItem.grindDepth = $0 }
-                        )
+                        heightAboveGrade: $lineItem.stumpHeightAboveGrade,
+                        grindDepth: $lineItem.grindDepth
                     )
 
                 case .forestryMulching:
@@ -536,11 +554,11 @@ struct AddLineItemView: View {
                         }
                     }
 
-                    if lineItem.complexityMultiplier > 1.0 {
+                    if lineItem.afissHazardImpact > 0 {
                         HStack {
-                            Text("Complexity Factor")
+                            Text("AFISS Impact")
                             Spacer()
-                            Text(String(format: "%.1fx", lineItem.complexityMultiplier))
+                            Text("+\(Int(lineItem.afissHazardImpact)) points")
                                 .foregroundColor(.orange)
                         }
                     }
@@ -628,7 +646,7 @@ struct EditLineItemView: View {
 struct TreeMeasurementsSection: View {
     @Binding var height: Double?
     @Binding var dbh: Double?
-    @Binding var canopySpread: Double?
+    @Binding var canopyRadius: Double?
     @Binding var trimPercent: Double?
 
     var body: some View {
@@ -658,9 +676,9 @@ struct TreeMeasurementsSection: View {
             }
 
             HStack {
-                Label("Canopy", systemImage: "cloud")
+                Label("Canopy Radius", systemImage: "cloud")
                 Spacer()
-                TextField("0", value: $canopySpread, format: .number)
+                TextField("0", value: $canopyRadius, format: .number)
                     .keyboardType(.decimalPad)
                     .multilineTextAlignment(.trailing)
                     .frame(width: 60)
@@ -688,7 +706,8 @@ struct TreeMeasurementsSection: View {
 
 struct StumpMeasurementsSection: View {
     @Binding var diameter: Double?
-    @Binding var depth: Double
+    @Binding var heightAboveGrade: Double?
+    @Binding var grindDepth: Double?
 
     var body: some View {
         Section("Stump Details") {
@@ -705,15 +724,27 @@ struct StumpMeasurementsSection: View {
             }
 
             HStack {
+                Label("Height Above Grade", systemImage: "arrow.up")
+                Spacer()
+                TextField("1", value: $heightAboveGrade, format: .number)
+                    .keyboardType(.decimalPad)
+                    .multilineTextAlignment(.trailing)
+                    .frame(width: 60)
+                Text("feet")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+
+            HStack {
                 Label("Grind Depth", systemImage: "arrow.down")
                 Spacer()
-                Picker("Depth", selection: $depth) {
-                    Text("6\"").tag(6.0)
-                    Text("8\"").tag(8.0)
-                    Text("12\"").tag(12.0)
-                    Text("18\"").tag(18.0)
-                }
-                .pickerStyle(SegmentedPickerStyle())
+                TextField("1", value: $grindDepth, format: .number)
+                    .keyboardType(.decimalPad)
+                    .multilineTextAlignment(.trailing)
+                    .frame(width: 60)
+                Text("feet")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
         }
     }
