@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25A28D34109084F4B2A8EE1A /* CustomerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */; };
+		7F53663A4BB244719E8279C7 /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487D7850A497C61F0358D99 /* LocationPicker.swift */; };
 		A1A1A1A12B9F000000000001 /* TreeShopIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000001 /* TreeShopIOSAppApp.swift */; };
 		A1A1A1A22B9F000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000002 /* ContentView.swift */; };
 		A1A1A1A32B9F000000000003 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000003 /* LineItem.swift */; };
 		A1A1A1A42B9F000000000004 /* LineItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000004 /* LineItemDetailView.swift */; };
 		A1A1A1A52B9F000000000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000005 /* Assets.xcassets */; };
-		A1A1A1AF2B9F000000000016 /* TreeShopDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */; };
 		A1A1A1A62B9F000000000007 /* ProposalGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000007 /* ProposalGenerator.swift */; };
 		A1A1A1A72B9F000000000008 /* ProposalBuilderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000008 /* ProposalBuilderV2.swift */; };
-		A1A1A1A82B9F000000000009 /* CoreData/PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000009 /* CoreData/PersistenceController.swift */; };
+		A1A1A1A82B9F000000000009 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000009 /* PersistenceController.swift */; };
 		A1A1A1A92B9F000000000010 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000010 /* MainTabView.swift */; };
-		A1A1A1AA2B9F000000000011 /* Views/CustomersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000011 /* Views/CustomersView.swift */; };
-		A1A1A1AB2B9F000000000012 /* Views/ProposalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000012 /* Views/ProposalsListView.swift */; };
-		A1A1A1AC2B9F000000000013 /* CoreData/CDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000013 /* CoreData/CDCustomer+CoreDataClass.swift */; };
-		A1A1A1AD2B9F000000000014 /* CoreData/CDProposal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000014 /* CoreData/CDProposal+CoreDataClass.swift */; };
-		A1A1A1AE2B9F000000000015 /* CoreData/CDLineItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000015 /* CoreData/CDLineItem+CoreDataClass.swift */; };
+		A1A1A1AA2B9F000000000011 /* CustomersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000011 /* CustomersView.swift */; };
+		A1A1A1AB2B9F000000000012 /* ProposalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000012 /* ProposalsListView.swift */; };
+		A1A1A1AC2B9F000000000013 /* CDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000013 /* CDCustomer+CoreDataClass.swift */; };
+		A1A1A1AD2B9F000000000014 /* CDProposal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */; };
+		A1A1A1AE2B9F000000000015 /* CDLineItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */; };
+		A1A1A1AF2B9F000000000016 /* TreeShopDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +36,16 @@
 		A1A1A1A02B9F000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000007 /* ProposalGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalGenerator.swift; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000008 /* ProposalBuilderV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalBuilderV2.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000009 /* CoreData/PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData/PersistenceController.swift; sourceTree = "<group>"; };
+		A1A1A1A02B9F000000000009 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData/PersistenceController.swift; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000010 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000011 /* Views/CustomersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/CustomersView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000012 /* Views/ProposalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ProposalsListView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000013 /* CoreData/CDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000014 /* CoreData/CDProposal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDProposal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000015 /* CoreData/CDLineItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDLineItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1A1A1A02B9F000000000011 /* CustomersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/CustomersView.swift; sourceTree = "<group>"; };
+		A1A1A1A02B9F000000000012 /* ProposalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ProposalsListView.swift; sourceTree = "<group>"; };
+		A1A1A1A02B9F000000000013 /* CDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDProposal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDLineItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodeld; path = TreeShopDataModel.xcdatamodeld; sourceTree = "<group>"; };
+		C487D7850A497C61F0358D99 /* LocationPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPicker.swift; path = Maps/LocationPicker.swift; sourceTree = "<group>"; };
+		D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomerMapView.swift; path = Maps/CustomerMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,15 +77,16 @@
 				A1A1A1A02B9F000000000004 /* LineItemDetailView.swift */,
 				A1A1A1A02B9F000000000007 /* ProposalGenerator.swift */,
 				A1A1A1A02B9F000000000008 /* ProposalBuilderV2.swift */,
-				A1A1A1A02B9F000000000009 /* CoreData/PersistenceController.swift */,
-				A1A1A1A02B9F000000000011 /* Views/CustomersView.swift */,
-				A1A1A1A02B9F000000000012 /* Views/ProposalsListView.swift */,
-				A1A1A1A02B9F000000000013 /* CoreData/CDCustomer+CoreDataClass.swift */,
-				A1A1A1A02B9F000000000014 /* CoreData/CDProposal+CoreDataClass.swift */,
-				A1A1A1A02B9F000000000015 /* CoreData/CDLineItem+CoreDataClass.swift */,
+				A1A1A1A02B9F000000000009 /* PersistenceController.swift */,
+				A1A1A1A02B9F000000000011 /* CustomersView.swift */,
+				A1A1A1A02B9F000000000012 /* ProposalsListView.swift */,
+				A1A1A1A02B9F000000000013 /* CDCustomer+CoreDataClass.swift */,
+				A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */,
+				A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */,
 				A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */,
 				A1A1A1A02B9F000000000005 /* Assets.xcassets */,
 				A1A1A1A02B9F000000000006 /* Info.plist */,
+				F17DA0833E5AE811C7057760 /* Maps */,
 			);
 			path = TreeShopIOSApp;
 			sourceTree = "<group>";
@@ -92,6 +97,15 @@
 				A1A1A1A02B9F000000000000 /* TreeShopIOSApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F17DA0833E5AE811C7057760 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */,
+				C487D7850A497C61F0358D99 /* LocationPicker.swift */,
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,13 +184,15 @@
 				A1A1A1A42B9F000000000004 /* LineItemDetailView.swift in Sources */,
 				A1A1A1A62B9F000000000007 /* ProposalGenerator.swift in Sources */,
 				A1A1A1A72B9F000000000008 /* ProposalBuilderV2.swift in Sources */,
-				A1A1A1A82B9F000000000009 /* CoreData/PersistenceController.swift in Sources */,
+				A1A1A1A82B9F000000000009 /* PersistenceController.swift in Sources */,
 				A1A1A1A92B9F000000000010 /* MainTabView.swift in Sources */,
-				A1A1A1AA2B9F000000000011 /* Views/CustomersView.swift in Sources */,
-				A1A1A1AB2B9F000000000012 /* Views/ProposalsListView.swift in Sources */,
-				A1A1A1AC2B9F000000000013 /* CoreData/CDCustomer+CoreDataClass.swift in Sources */,
-				A1A1A1AD2B9F000000000014 /* CoreData/CDProposal+CoreDataClass.swift in Sources */,
-				A1A1A1AE2B9F000000000015 /* CoreData/CDLineItem+CoreDataClass.swift in Sources */,
+				A1A1A1AA2B9F000000000011 /* CustomersView.swift in Sources */,
+				A1A1A1AB2B9F000000000012 /* ProposalsListView.swift in Sources */,
+				A1A1A1AC2B9F000000000013 /* CDCustomer+CoreDataClass.swift in Sources */,
+				A1A1A1AD2B9F000000000014 /* CDProposal+CoreDataClass.swift in Sources */,
+				A1A1A1AE2B9F000000000015 /* CDLineItem+CoreDataClass.swift in Sources */,
+				25A28D34109084F4B2A8EE1A /* CustomerMapView.swift in Sources */,
+				7F53663A4BB244719E8279C7 /* LocationPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

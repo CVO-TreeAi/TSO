@@ -17,6 +17,8 @@ extension CDCustomer {
     @NSManaged public var phone: String?
     @NSManaged public var address: String?
     @NSManaged public var notes: String?
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
     @NSManaged public var createdAt: Date?
     @NSManaged public var updatedAt: Date?
     @NSManaged public var proposals: NSSet?

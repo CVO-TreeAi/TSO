@@ -140,6 +140,8 @@ struct AddCustomerView: View {
     @State private var email = ""
     @State private var phone = ""
     @State private var address = ""
+    @State private var latitude: Double = 0
+    @State private var longitude: Double = 0
     @State private var notes = ""
 
     var body: some View {
@@ -155,9 +157,15 @@ struct AddCustomerView: View {
                         .keyboardType(.phonePad)
                 }
 
-                Section("Address") {
+                Section("Address & Location") {
                     TextField("Property Address", text: $address)
                         .textContentType(.fullStreetAddress)
+
+                    LocationPickerButton(
+                        address: $address,
+                        latitude: $latitude,
+                        longitude: $longitude
+                    )
                 }
 
                 Section("Notes") {
@@ -192,6 +200,8 @@ struct AddCustomerView: View {
         newCustomer.email = email
         newCustomer.phone = phone
         newCustomer.address = address
+        newCustomer.latitude = latitude
+        newCustomer.longitude = longitude
         newCustomer.notes = notes
         newCustomer.createdAt = Date()
         newCustomer.updatedAt = Date()
@@ -391,6 +401,8 @@ struct EditCustomerView: View {
     @State private var email: String = ""
     @State private var phone: String = ""
     @State private var address: String = ""
+    @State private var latitude: Double = 0
+    @State private var longitude: Double = 0
     @State private var notes: String = ""
 
     var body: some View {
@@ -406,9 +418,15 @@ struct EditCustomerView: View {
                         .keyboardType(.phonePad)
                 }
 
-                Section("Address") {
+                Section("Address & Location") {
                     TextField("Property Address", text: $address)
                         .textContentType(.fullStreetAddress)
+
+                    LocationPickerButton(
+                        address: $address,
+                        latitude: $latitude,
+                        longitude: $longitude
+                    )
                 }
 
                 Section("Notes") {
@@ -437,6 +455,8 @@ struct EditCustomerView: View {
                 email = customer.email ?? ""
                 phone = customer.phone ?? ""
                 address = customer.address ?? ""
+                latitude = customer.latitude
+                longitude = customer.longitude
                 notes = customer.notes ?? ""
             }
         }
@@ -447,6 +467,8 @@ struct EditCustomerView: View {
         customer.email = email
         customer.phone = phone
         customer.address = address
+        customer.latitude = latitude
+        customer.longitude = longitude
         customer.notes = notes
         customer.updatedAt = Date()
 
