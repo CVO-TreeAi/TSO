@@ -42,8 +42,21 @@ struct CustomerMapView: View {
 
                 // Map controls overlay
                 VStack {
+                    Spacer()
+
                     HStack {
+                        // Customer summary card on the left
+                        if !customers.isEmpty {
+                            CustomerMapSummary(
+                                totalCustomers: customers.count,
+                                selectedCustomer: selectedCustomer
+                            )
+                            .frame(maxWidth: 200)
+                        }
+
                         Spacer()
+
+                        // Map controls on the right
                         VStack(spacing: 10) {
                             // Center on user location
                             Button(action: centerOnUserLocation) {
@@ -77,19 +90,8 @@ struct CustomerMapView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .shadow(radius: 4)
                         }
-                        .padding()
                     }
-
-                    Spacer()
-
-                    // Customer summary card
-                    if !customers.isEmpty {
-                        CustomerMapSummary(
-                            totalCustomers: customers.count,
-                            selectedCustomer: selectedCustomer
-                        )
-                        .padding()
-                    }
+                    .padding()
                 }
             }
             .navigationTitle("Customer Map")

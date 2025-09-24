@@ -8,6 +8,11 @@ struct MainTabView: View {
                     Label("Proposals", systemImage: "doc.text")
                 }
 
+            SchedulingView()
+                .tabItem {
+                    Label("Schedule", systemImage: "calendar")
+                }
+
             CustomersView()
                 .tabItem {
                     Label("Customers", systemImage: "person.2")

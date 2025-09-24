@@ -14,6 +14,7 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="proposals" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Proposal" inverseName="customer" inverseEntity="Proposal"/>
+        <relationship name="workOrders" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkOrder" inverseName="customer" inverseEntity="WorkOrder"/>
     </entity>
 
     <!-- Proposal Entity -->
@@ -32,6 +33,7 @@
         <attribute name="includesHauling" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <relationship name="customer" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="proposals" inverseEntity="Customer"/>
         <relationship name="lineItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LineItem" inverseName="proposal" inverseEntity="LineItem"/>
+        <relationship name="workOrders" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkOrder" inverseName="proposal" inverseEntity="WorkOrder"/>
     </entity>
 
     <!-- LineItem Entity -->
@@ -56,6 +58,29 @@
         <attribute name="slope" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="sortOrder" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="proposal" maxCount="1" deletionRule="Nullify" destinationEntity="Proposal" inverseName="lineItems" inverseEntity="Proposal"/>
+    </entity>
+
+    <!-- WorkOrder Entity -->
+    <entity name="WorkOrder" representedClassName="CDWorkOrder" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="workOrderNumber" optional="YES" attributeType="String"/>
+        <attribute name="scheduledDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="estimatedDuration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="actualDuration" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" defaultValueString="Scheduled"/>
+        <attribute name="priority" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="crewAssigned" optional="YES" attributeType="String"/>
+        <attribute name="equipmentRequired" optional="YES" attributeType="String"/>
+        <attribute name="safetyNotes" optional="YES" attributeType="String"/>
+        <attribute name="completionNotes" optional="YES" attributeType="String"/>
+        <attribute name="weatherConditions" optional="YES" attributeType="String"/>
+        <attribute name="calendarEventId" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="proposal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Proposal" inverseName="workOrders" inverseEntity="Proposal"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="workOrders" inverseEntity="Customer"/>
     </entity>
 
 </model>
