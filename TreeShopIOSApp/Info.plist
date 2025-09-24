@@ -46,5 +46,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Tree Shop Ops needs your location to map customer properties and optimize crew routes.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Tree Shop Ops uses your location to track time on job sites and provide navigation to customers.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Tree Shop Ops needs access to your calendar to schedule work orders and manage crew assignments.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Tree Shop Ops uses reminders to notify you of upcoming work orders and equipment maintenance.</string>
 </dict>
 </plist>
