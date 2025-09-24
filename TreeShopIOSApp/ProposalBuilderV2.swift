@@ -212,6 +212,8 @@ struct ProposalV2: Identifiable {
     var customerEmail: String = ""
     var customerPhone: String = ""
     var propertyAddress: String = ""
+    var propertyLatitude: Double = 0
+    var propertyLongitude: Double = 0
     var lineItems: [ProposalLineItem] = []
     var notes: String = ""
     var validDays: Int = 7
@@ -263,8 +265,12 @@ struct ProposalBuilderV2View: View {
                     TextField("Phone", text: $proposal.customerPhone)
                         .textContentType(.telephoneNumber)
                         .keyboardType(.phonePad)
-                    TextField("Property Address", text: $proposal.propertyAddress)
-                        .textContentType(.fullStreetAddress)
+                    AddressSearchField(
+                        address: $proposal.propertyAddress,
+                        latitude: $proposal.propertyLatitude,
+                        longitude: $proposal.propertyLongitude,
+                        placeholder: "Property Address"
+                    )
                 }
 
                 // Line Items
@@ -616,9 +622,102 @@ struct EditLineItemView: View {
 
     var body: some View {
         NavigationStack {
-            // Same form as AddLineItemView but with Save instead of Add
             Form {
-                // ... (same content as AddLineItemView)
+                Section("Service Type") {
+                    Picker("Type", selection: $lineItem.type) {
+                        ForEach(LineItemType.allCases, id: \.self) { type in
+                            Label(type.rawValue, systemImage: type.icon)
+                        }
+                    }
+
+                    HStack {
+                        Text("Quantity")
+                        Spacer()
+                        TextField("1", value: $lineItem.quantity, format: .number)
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                            .frame(width: 60)
+                        Text(lineItem.type.unitType)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+
+                // Dynamic fields based on type
+                switch lineItem.type {
+                case .treeRemoval, .treeTrimming:
+                    TreeMeasurementsSection(
+                        height: $lineItem.height,
+                        dbh: $lineItem.dbh,
+                        canopyRadius: $lineItem.canopyRadius,
+                        trimPercent: lineItem.type == .treeTrimming ? $lineItem.trimPercent : .constant(nil)
+                    )
+
+                case .stumpGrinding:
+                    StumpMeasurementsSection(
+                        diameter: $lineItem.stumpDiameter,
+                        heightAboveGrade: $lineItem.stumpHeightAboveGrade,
+                        grindDepth: $lineItem.grindDepth
+                    )
+
+                case .forestryMulching:
+                    MulchingSection(
+                        acres: $lineItem.acres,
+                        maxDBH: $lineItem.maxDBH
+                    )
+
+                default:
+                    EmptyView()
+                }
+
+                // Complexity factors
+                ComplexitySection(
+                    accessDifficulty: $lineItem.accessDifficulty,
+                    nearStructure: $lineItem.nearStructure,
+                    powerLines: $lineItem.powerLines,
+                    slope: $lineItem.slope
+                )
+
+                // Additional notes
+                Section("Additional Details") {
+                    TextField("Notes (optional)", text: $lineItem.description)
+                }
+
+                // Price preview
+                Section("Estimated Price") {
+                    HStack {
+                        Text("Base Price")
+                        Spacer()
+                        Text(formatCurrency(lineItem.type.baseRate))
+                    }
+
+                    if lineItem.treeScore > 0 {
+                        HStack {
+                            Text("TreeScore")
+                            Spacer()
+                            Text("\(Int(lineItem.treeScore)) points")
+                        }
+                    }
+
+                    if lineItem.afissHazardImpact > 0 {
+                        HStack {
+                            Text("AFISS Impact")
+                            Spacer()
+                            Text("+\(Int(lineItem.afissHazardImpact)) points")
+                                .foregroundColor(.orange)
+                        }
+                    }
+
+                    HStack {
+                        Text("Line Total")
+                            .font(.headline)
+                        Spacer()
+                        Text(lineItem.displayPrice)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.green)
+                    }
+                }
             }
             .navigationTitle("Edit Service")
             .navigationBarTitleDisplayMode(.inline)
@@ -638,6 +737,13 @@ struct EditLineItemView: View {
                 }
             }
         }
+    }
+
+    func formatCurrency(_ value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 0
+        return formatter.string(from: NSNumber(value: value)) ?? "$0"
     }
 }
 
