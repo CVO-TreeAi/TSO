@@ -7,9 +7,11 @@ struct LocationPicker: View {
     @Binding var latitude: Double
     @Binding var longitude: Double
     @State private var searchText = ""
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
-        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+    @State private var mapPosition = MapCameraPosition.region(
+        MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        )
     )
     @State private var selectedLocation: CLLocationCoordinate2D?
     @State private var searchResults: [MKMapItem] = []
@@ -20,15 +22,24 @@ struct LocationPicker: View {
         NavigationStack {
             ZStack {
                 // Map View
-                Map(coordinateRegion: $region,
-                    interactionModes: .all,
-                    showsUserLocation: true,
-                    annotationItems: annotations) { item in
-                    MapPin(coordinate: item.coordinate, tint: .blue)
+                Map(position: $mapPosition) {
+                    UserAnnotation()
+
+                    ForEach(annotations) { item in
+                        Marker(
+                            "Selected Location",
+                            coordinate: item.coordinate
+                        )
+                        .tint(.blue)
+                    }
                 }
-                .onTapGesture { location in
-                    // Convert tap to coordinate
-                    handleMapTap(location)
+                .onMapCameraChange { mapCameraUpdateContext in
+                    // Could handle map camera changes if needed
+                }
+                .mapControls {
+                    MapUserLocationButton()
+                    MapCompass()
+                    MapScaleView()
                 }
 
                 // Search overlay
@@ -147,7 +158,12 @@ struct LocationPicker: View {
         // If we have existing coordinates, use them
         if latitude != 0 && longitude != 0 {
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            region.center = coordinate
+            mapPosition = .region(
+                MKCoordinateRegion(
+                    center: coordinate,
+                    span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                )
+            )
             selectedLocation = coordinate
         } else {
             // Try to geocode the address if we have one
@@ -163,7 +179,12 @@ struct LocationPicker: View {
         isSearching = true
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchText
-        searchRequest.region = region
+
+        // Use a default region for search - ideally would extract from mapPosition
+        searchRequest.region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
+            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        )
 
         let search = MKLocalSearch(request: searchRequest)
         search.start { response, error in
@@ -180,8 +201,12 @@ struct LocationPicker: View {
     func selectSearchResult(_ item: MKMapItem) {
         let coordinate = item.placemark.coordinate
         selectedLocation = coordinate
-        region.center = coordinate
-        region.span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        mapPosition = .region(
+            MKCoordinateRegion(
+                center: coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            )
+        )
 
         // Update address
         if let name = item.name,
@@ -208,7 +233,12 @@ struct LocationPicker: View {
                let location = placemark.location {
                 let coordinate = location.coordinate
                 selectedLocation = coordinate
-                region.center = coordinate
+                mapPosition = .region(
+                    MKCoordinateRegion(
+                        center: coordinate,
+                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                    )
+                )
                 latitude = coordinate.latitude
                 longitude = coordinate.longitude
             }

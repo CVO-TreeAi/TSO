@@ -178,11 +178,12 @@ class CoreDataManager: ObservableObject {
             cdLineItem.acres = lineItem.acres ?? 0
             cdLineItem.maxDBH = lineItem.maxDBH ?? 0
 
-            // Complexity - calculate from accessDifficulty
-            cdLineItem.complexityMultiplier = lineItem.accessDifficulty
-            cdLineItem.nearStructure = lineItem.nearStructure
-            cdLineItem.powerLines = lineItem.powerLines
-            cdLineItem.slope = lineItem.slope
+            // AFISS complexity - store as multiplier and flags for backward compatibility
+            cdLineItem.complexityMultiplier = lineItem.afissAssessment.totalMultiplier
+            // Set legacy flags based on AFISS factors
+            cdLineItem.nearStructure = lineItem.afissAssessment.selectedFactors.contains { $0.factor.name.contains("Structure") }
+            cdLineItem.powerLines = lineItem.afissAssessment.selectedFactors.contains { $0.factor.name.contains("Power") }
+            cdLineItem.slope = lineItem.afissAssessment.selectedFactors.contains { $0.factor.name.contains("Slope") }
 
             cdLineItem.proposal = cdProposal
         }

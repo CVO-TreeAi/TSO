@@ -81,11 +81,8 @@ struct ProposalLineItem: Identifiable {
     var acres: Double?
     var maxDBH: Double? // max tree size to mulch
 
-    // Complexity factors
-    var accessDifficulty: Double = 1.0 // 1.0 = easy, 1.5 = medium, 2.0 = hard
-    var nearStructure: Bool = false
-    var powerLines: Bool = false
-    var slope: Bool = false
+    // AFISS Assessment (replaces old complexity factors)
+    var afissAssessment: AFISSAssessment = AFISSAssessment()
 
     // Calculated fields
     var baseTreeScore: Double {
@@ -96,18 +93,16 @@ struct ProposalLineItem: Identifiable {
         return height * canopyDiameter * dbhInFeet
     }
 
-    var afissHazardImpact: Double {
-        var impact = 0.0
-        if nearStructure { impact += 0.25 }
-        if powerLines { impact += 0.25 }
-        if slope { impact += 0.15 }
-        // Add access difficulty factor
-        impact += (accessDifficulty - 1.0) * 0.35
-        return baseTreeScore * impact
+    // AF Score - what we show to users (not percentage)
+    var afScore: Int {
+        return afissAssessment.totalAFScore
     }
 
     var treeScore: Double {
-        return baseTreeScore + afissHazardImpact
+        // Base TreeScore with AFISS multiplier applied internally
+        let baseScore = baseTreeScore
+        let afissMultiplier = afissAssessment.totalMultiplier
+        return baseScore * afissMultiplier
     }
 
     var stumpScore: Double {
@@ -115,8 +110,9 @@ struct ProposalLineItem: Identifiable {
         let heightAbove = stumpHeightAboveGrade ?? 1
         let depthGrind = grindDepth ?? 1
         let baseScore = (heightAbove + depthGrind) * Double(diameter)
-        let afiss = afissHazardImpact * 0.1 // Use 10% of tree AFISS for stump
-        return baseScore + afiss
+        // Apply AFISS multiplier to stump score
+        let afissMultiplier = afissAssessment.totalMultiplier
+        return baseScore * afissMultiplier
     }
 
     var adjustedScore: Double {
@@ -436,17 +432,33 @@ struct LineItemRow: View {
                     .italic()
             }
 
-            // Complexity indicators
-            if item.accessDifficulty > 1.0 || item.nearStructure || item.powerLines || item.slope {
+            // AFISS indicators
+            if !item.afissAssessment.selectedFactors.isEmpty {
                 HStack(spacing: 8) {
-                    if item.nearStructure {
-                        Tag(text: "Near Structure", color: .orange)
+                    // Show AF Score
+                    HStack(spacing: 2) {
+                        Image(systemName: "shield.fill")
+                            .font(.caption2)
+                            .foregroundColor(.green)
+                        Text("AF +\(item.afScore)")
+                            .font(.caption)
+                            .fontWeight(.medium)
+                            .foregroundColor(.green)
                     }
-                    if item.powerLines {
-                        Tag(text: "Power Lines", color: .red)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(Color.green.opacity(0.15))
+                    .cornerRadius(4)
+
+                    // Show first 2 factors as tags
+                    ForEach(Array(item.afissAssessment.selectedFactors.prefix(2)), id: \.id) { selected in
+                        Tag(text: selected.factor.name, color: selected.factor.category.color)
                     }
-                    if item.slope {
-                        Tag(text: "Slope", color: .brown)
+
+                    if item.afissAssessment.selectedFactors.count > 2 {
+                        Text("+\(item.afissAssessment.selectedFactors.count - 2)")
+                            .font(.caption2)
+                            .foregroundColor(.secondary)
                     }
                 }
             }
@@ -531,12 +543,10 @@ struct AddLineItemView: View {
                     EmptyView()
                 }
 
-                // Complexity factors
-                ComplexitySection(
-                    accessDifficulty: $lineItem.accessDifficulty,
-                    nearStructure: $lineItem.nearStructure,
-                    powerLines: $lineItem.powerLines,
-                    slope: $lineItem.slope
+                // AFISS Assessment
+                AFISSSection(
+                    assessment: $lineItem.afissAssessment,
+                    baseScore: lineItem.baseTreeScore > 0 ? lineItem.baseTreeScore : 100
                 )
 
                 // Additional notes
@@ -552,20 +562,30 @@ struct AddLineItemView: View {
                         Text(formatCurrency(lineItem.type.baseRate))
                     }
 
-                    if lineItem.treeScore > 0 {
+                    if lineItem.baseTreeScore > 0 {
                         HStack {
-                            Text("TreeScore")
+                            Text("Base Score")
                             Spacer()
-                            Text("\(Int(lineItem.treeScore)) points")
+                            Text("\(Int(lineItem.baseTreeScore)) points")
                         }
                     }
 
-                    if lineItem.afissHazardImpact > 0 {
+                    if lineItem.afScore > 0 {
                         HStack {
-                            Text("AFISS Impact")
+                            Text("AF Score")
                             Spacer()
-                            Text("+\(Int(lineItem.afissHazardImpact)) points")
-                                .foregroundColor(.orange)
+                            Text("+\(lineItem.afScore) points")
+                                .foregroundColor(.green)
+                        }
+                    }
+
+                    if lineItem.treeScore > 0 {
+                        HStack {
+                            Text("Total Score")
+                                .fontWeight(.medium)
+                            Spacer()
+                            Text("\(Int(lineItem.treeScore)) points")
+                                .fontWeight(.medium)
                         }
                     }
 
@@ -670,12 +690,10 @@ struct EditLineItemView: View {
                     EmptyView()
                 }
 
-                // Complexity factors
-                ComplexitySection(
-                    accessDifficulty: $lineItem.accessDifficulty,
-                    nearStructure: $lineItem.nearStructure,
-                    powerLines: $lineItem.powerLines,
-                    slope: $lineItem.slope
+                // AFISS Assessment
+                AFISSSection(
+                    assessment: $lineItem.afissAssessment,
+                    baseScore: lineItem.baseTreeScore > 0 ? lineItem.baseTreeScore : 100
                 )
 
                 // Additional notes
@@ -691,20 +709,30 @@ struct EditLineItemView: View {
                         Text(formatCurrency(lineItem.type.baseRate))
                     }
 
-                    if lineItem.treeScore > 0 {
+                    if lineItem.baseTreeScore > 0 {
                         HStack {
-                            Text("TreeScore")
+                            Text("Base Score")
                             Spacer()
-                            Text("\(Int(lineItem.treeScore)) points")
+                            Text("\(Int(lineItem.baseTreeScore)) points")
                         }
                     }
 
-                    if lineItem.afissHazardImpact > 0 {
+                    if lineItem.afScore > 0 {
                         HStack {
-                            Text("AFISS Impact")
+                            Text("AF Score")
                             Spacer()
-                            Text("+\(Int(lineItem.afissHazardImpact)) points")
-                                .foregroundColor(.orange)
+                            Text("+\(lineItem.afScore) points")
+                                .foregroundColor(.green)
+                        }
+                    }
+
+                    if lineItem.treeScore > 0 {
+                        HStack {
+                            Text("Total Score")
+                                .fontWeight(.medium)
+                            Spacer()
+                            Text("\(Int(lineItem.treeScore)) points")
+                                .fontWeight(.medium)
                         }
                     }
 
@@ -893,24 +921,69 @@ struct MulchingSection: View {
     }
 }
 
-struct ComplexitySection: View {
-    @Binding var accessDifficulty: Double
-    @Binding var nearStructure: Bool
-    @Binding var powerLines: Bool
-    @Binding var slope: Bool
+struct AFISSSection: View {
+    @Binding var assessment: AFISSAssessment
+    let baseScore: Double
+    @State private var showingAssessment = false
 
     var body: some View {
-        Section("Site Complexity") {
-            Picker("Access", selection: $accessDifficulty) {
-                Text("Easy").tag(1.0)
-                Text("Medium").tag(1.5)
-                Text("Hard").tag(2.0)
-            }
-            .pickerStyle(SegmentedPickerStyle())
+        Section("Site Assessment (AFISS)") {
+            Button(action: { showingAssessment = true }) {
+                HStack {
+                    Image(systemName: "checklist")
+                        .foregroundColor(.accentColor)
 
-            Toggle("Near Structure", isOn: $nearStructure)
-            Toggle("Power Lines", isOn: $powerLines)
-            Toggle("Slope/Hill", isOn: $slope)
+                    if assessment.selectedFactors.isEmpty {
+                        Text("Add Assessment Factors")
+                            .foregroundColor(.accentColor)
+                    } else {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("\(assessment.selectedFactors.count) factors selected")
+                                .font(.subheadline)
+                                .foregroundColor(.primary)
+
+                            // Show first few factor names
+                            let factorNames = assessment.selectedFactors
+                                .prefix(2)
+                                .map { $0.factor.name }
+                                .joined(separator: ", ")
+
+                            Text(factorNames)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .lineLimit(1)
+                        }
+                    }
+
+                    Spacer()
+
+                    if assessment.totalAFScore > 0 {
+                        VStack(alignment: .trailing, spacing: 2) {
+                            HStack(spacing: 2) {
+                                Text("+\(assessment.totalAFScore)")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.green)
+                            }
+                            Text("AF Score")
+                                .font(.caption2)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .sheet(isPresented: $showingAssessment) {
+                AFISSAssessmentView(
+                    currentAssessment: assessment,
+                    baseScore: baseScore
+                ) { newAssessment in
+                    assessment = newAssessment
+                }
+            }
         }
     }
 }
