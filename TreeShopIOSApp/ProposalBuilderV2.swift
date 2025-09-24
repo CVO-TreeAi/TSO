@@ -93,9 +93,25 @@ struct ProposalLineItem: Identifiable {
         return height * canopyDiameter * dbhInFeet
     }
 
-    // AF Score - what we show to users (not percentage)
+    // AF Score - dynamically calculated based on actual score
     var afScore: Int {
-        return afissAssessment.totalAFScore
+        // Use the appropriate base score depending on service type
+        let baseScore: Double
+        if type == .stumpGrinding {
+            // For stumps, use base stump score before AFISS multiplier
+            if let diameter = stumpDiameter {
+                let heightAbove = stumpHeightAboveGrade ?? 1
+                let depthGrind = grindDepth ?? 1
+                baseScore = (heightAbove + depthGrind) * Double(diameter)
+            } else {
+                baseScore = 0
+            }
+        } else {
+            // For trees, use base tree score
+            baseScore = baseTreeScore
+        }
+
+        return afissAssessment.totalAFScore(baseScore: baseScore)
     }
 
     var treeScore: Double {
@@ -956,20 +972,6 @@ struct AFISSSection: View {
                     }
 
                     Spacer()
-
-                    if assessment.totalAFScore > 0 {
-                        VStack(alignment: .trailing, spacing: 2) {
-                            HStack(spacing: 2) {
-                                Text("+\(assessment.totalAFScore)")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.green)
-                            }
-                            Text("AF Score")
-                                .font(.caption2)
-                                .foregroundColor(.secondary)
-                        }
-                    }
 
                     Image(systemName: "chevron.right")
                         .font(.caption)

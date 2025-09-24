@@ -45,7 +45,7 @@ class AFISSManager: ObservableObject {
 
     // Toggle a factor selection
     func toggleFactor(_ factor: AssessmentFactor) {
-        assessment.toggle(factor, baseScore: baseScore)
+        assessment.toggle(factor)
     }
 
     // Check if factor is selected
@@ -53,7 +53,7 @@ class AFISSManager: ObservableObject {
         assessment.isSelected(factor)
     }
 
-    // Get AF Score for a factor (what we show to users)
+    // Get AF Score for a factor (what we show to users) - kept for compatibility but not shown during selection
     func getAFScore(for factor: AssessmentFactor) -> Int {
         factor.calculateScore(baseScore: baseScore)
     }
@@ -93,9 +93,9 @@ class AFISSManager: ObservableObject {
         assessment.totalMultiplier
     }
 
-    // Get total AF Score (displayed to user)
+    // Get total AF Score (displayed to user) - dynamic based on base score
     func getTotalAFScore() -> Int {
-        assessment.totalAFScore
+        assessment.totalAFScore(baseScore: baseScore)
     }
 
     // Quick preset combinations

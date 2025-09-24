@@ -77,13 +77,9 @@ struct AssessmentFactor: Identifiable, Hashable {
         return Int(baseMultiplier * 100)
     }
 
-    // Create a selected version with a specific base score
-    func selected(withBaseScore baseScore: Double) -> SelectedAssessmentFactor {
-        return SelectedAssessmentFactor(
-            factor: self,
-            baseScore: baseScore,
-            afScore: calculateScore(baseScore: baseScore)
-        )
+    // Create a selected version
+    func selected() -> SelectedAssessmentFactor {
+        return SelectedAssessmentFactor(factor: self)
     }
 }
 
@@ -92,8 +88,6 @@ struct AssessmentFactor: Identifiable, Hashable {
 struct SelectedAssessmentFactor: Identifiable, Hashable {
     let id = UUID()
     let factor: AssessmentFactor
-    let baseScore: Double
-    let afScore: Int // This is what we show to users
 
     static func == (lhs: SelectedAssessmentFactor, rhs: SelectedAssessmentFactor) -> Bool {
         lhs.id == rhs.id
@@ -102,6 +96,11 @@ struct SelectedAssessmentFactor: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+
+    // Calculate AF Score dynamically based on provided base score
+    func getAFScore(baseScore: Double) -> Int {
+        return factor.calculateScore(baseScore: baseScore)
+    }
 }
 
 // MARK: - AFISS Assessment Result
@@ -109,9 +108,10 @@ struct SelectedAssessmentFactor: Identifiable, Hashable {
 struct AFISSAssessment {
     var selectedFactors: [SelectedAssessmentFactor] = []
 
-    // Total AF Score to display to user
-    var totalAFScore: Int {
-        selectedFactors.reduce(0) { $0 + $1.afScore }
+    // Total AF Score calculated dynamically based on provided base score
+    func totalAFScore(baseScore: Double) -> Int {
+        guard baseScore > 0 else { return 0 }
+        return selectedFactors.reduce(0) { $0 + $1.getAFScore(baseScore: baseScore) }
     }
 
     // Internal multiplier for calculations (never exposed)
@@ -127,12 +127,12 @@ struct AFISSAssessment {
         selectedFactors.filter { $0.factor.category == category }
     }
 
-    // Add or remove a factor
-    mutating func toggle(_ factor: AssessmentFactor, baseScore: Double) {
+    // Add or remove a factor (no base score needed during selection)
+    mutating func toggle(_ factor: AssessmentFactor) {
         if let index = selectedFactors.firstIndex(where: { $0.factor.id == factor.id }) {
             selectedFactors.remove(at: index)
         } else {
-            selectedFactors.append(factor.selected(withBaseScore: baseScore))
+            selectedFactors.append(factor.selected())
         }
     }
 

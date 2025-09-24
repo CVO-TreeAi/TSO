@@ -235,31 +235,24 @@ struct AFISSAssessmentView: View {
 
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Selected Factors")
+                    Text("Assessment Factors")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("\(manager.assessment.selectedFactors.count) factors")
+                    Text("\(manager.assessment.selectedFactors.count) selected")
                         .font(.subheadline)
                         .fontWeight(.medium)
                 }
 
                 Spacer()
 
-                VStack(alignment: .trailing, spacing: 4) {
-                    Text("Total AF Score")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                    HStack(spacing: 4) {
-                        Image(systemName: "plus")
-                            .font(.caption)
-                            .foregroundColor(.green)
-                        Text("\(manager.getTotalAFScore())")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(.green)
-                        Text("points")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                if !manager.assessment.selectedFactors.isEmpty {
+                    // Show selected categories
+                    HStack(spacing: 8) {
+                        ForEach(Array(Set(manager.assessment.selectedFactors.map { $0.factor.category })), id: \.self) { category in
+                            Image(systemName: category.icon)
+                                .font(.caption)
+                                .foregroundColor(category.color)
+                        }
                     }
                 }
             }
@@ -350,19 +343,6 @@ struct FactorRow: View {
                 }
 
                 Spacer()
-
-                // AF Score
-                VStack(alignment: .trailing, spacing: 2) {
-                    HStack(spacing: 2) {
-                        Text("+\(afScore)")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(isSelected ? .green : .secondary)
-                    }
-                    Text("points")
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
             }
             .padding(.vertical, 8)
             .padding(.horizontal, 12)
@@ -412,9 +392,6 @@ struct SceneDescriberView: View {
                                         Text(factor.name)
                                             .font(.subheadline)
                                         Spacer()
-                                        Text("+\(manager.getAFScore(for: factor))")
-                                            .font(.caption)
-                                            .foregroundColor(.green)
                                     }
                                     .padding(.horizontal)
                                     .padding(.vertical, 4)
