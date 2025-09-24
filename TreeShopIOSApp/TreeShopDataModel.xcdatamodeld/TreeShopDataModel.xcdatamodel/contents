@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22A380" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+
+    <!-- Customer Entity -->
+    <entity name="Customer" representedClassName="CDCustomer" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="proposals" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Proposal" inverseName="customer" inverseEntity="Proposal"/>
+    </entity>
+
+    <!-- Proposal Entity -->
+    <entity name="Proposal" representedClassName="CDProposal" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="proposalNumber" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="expiresAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="String" defaultValueString="Draft"/>
+        <attribute name="subtotal" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="discount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="total" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="includesCleanup" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="includesHauling" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <relationship name="customer" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="proposals" inverseEntity="Customer"/>
+        <relationship name="lineItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LineItem" inverseName="proposal" inverseEntity="LineItem"/>
+    </entity>
+
+    <!-- LineItem Entity -->
+    <entity name="LineItem" representedClassName="CDLineItem" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="serviceType" optional="YES" attributeType="String"/>
+        <attribute name="quantity" attributeType="Double" defaultValueString="1.0" usesScalarValueType="YES"/>
+        <attribute name="unitPrice" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="totalPrice" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String"/>
+        <attribute name="treeHeight" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="treeDBH" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="treeCanopy" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="trimPercent" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="stumpDiameter" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="grindDepth" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="acres" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="maxDBH" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="complexityMultiplier" attributeType="Double" defaultValueString="1.0" usesScalarValueType="YES"/>
+        <attribute name="nearStructure" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="powerLines" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="slope" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="sortOrder" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="proposal" maxCount="1" deletionRule="Nullify" destinationEntity="Proposal" inverseName="lineItems" inverseEntity="Proposal"/>
+    </entity>
+
+</model>
