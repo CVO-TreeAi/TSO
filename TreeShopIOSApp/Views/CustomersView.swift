@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreData
+import MapKit
 
 struct CustomersView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -43,6 +44,17 @@ struct CustomersView: View {
             .navigationTitle("TSO Customers")
             .searchable(text: $searchText, prompt: "Search customers...")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Menu {
+                        Button(action: openAllInMaps) {
+                            Label("Open All in Maps", systemImage: "map")
+                        }
+                        .disabled(filteredCustomers.isEmpty)
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                }
+
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: { showingAddCustomer = true }) {
                         Label("Add Customer", systemImage: "plus")
@@ -65,6 +77,10 @@ struct CustomersView: View {
                 print("Error deleting customer: \(error)")
             }
         }
+    }
+
+    private func openAllInMaps() {
+        MapHelper.openMultipleInMaps(customers: filteredCustomers)
     }
 }
 
@@ -96,6 +112,19 @@ struct CustomerRowView: View {
                 }
 
                 Spacer()
+
+                // Map button if address exists
+                if (customer.latitude != 0 && customer.longitude != 0) ||
+                   (customer.address != nil && !customer.address!.isEmpty) {
+                    OpenInMapsButton(
+                        address: customer.address,
+                        latitude: customer.latitude,
+                        longitude: customer.longitude,
+                        name: customer.name,
+                        style: .compact
+                    )
+                    .foregroundColor(.accentColor)
+                }
 
                 VStack(alignment: .trailing, spacing: 4) {
                     Text("\(customer.proposalCount)")
@@ -158,14 +187,23 @@ struct AddCustomerView: View {
                 }
 
                 Section("Address & Location") {
-                    TextField("Property Address", text: $address)
-                        .textContentType(.fullStreetAddress)
-
-                    LocationPickerButton(
+                    AddressSearchField(
                         address: $address,
                         latitude: $latitude,
-                        longitude: $longitude
+                        longitude: $longitude,
+                        placeholder: "Property Address"
                     )
+
+                    // Show coordinates if set
+                    if latitude != 0 && longitude != 0 {
+                        HStack {
+                            Image(systemName: "location.fill")
+                                .foregroundColor(.green)
+                            Text("Location set: \(latitude, specifier: "%.4f"), \(longitude, specifier: "%.4f")")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
 
                 Section("Notes") {
@@ -337,7 +375,7 @@ struct CustomerDetailView: View {
                     } else {
                         ForEach(sortedProposals) { proposal in
                             NavigationLink(destination: ProposalDetailView(proposal: proposal)) {
-                                ProposalCardView(proposal: proposal)
+                                ProposalRowView(proposal: proposal)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -419,14 +457,23 @@ struct EditCustomerView: View {
                 }
 
                 Section("Address & Location") {
-                    TextField("Property Address", text: $address)
-                        .textContentType(.fullStreetAddress)
-
-                    LocationPickerButton(
+                    AddressSearchField(
                         address: $address,
                         latitude: $latitude,
-                        longitude: $longitude
+                        longitude: $longitude,
+                        placeholder: "Property Address"
                     )
+
+                    // Show coordinates if set
+                    if latitude != 0 && longitude != 0 {
+                        HStack {
+                            Image(systemName: "location.fill")
+                                .foregroundColor(.green)
+                            Text("Location set: \(latitude, specifier: "%.4f"), \(longitude, specifier: "%.4f")")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
 
                 Section("Notes") {

@@ -18,11 +18,6 @@ struct MainTabView: View {
                     Label("Customers", systemImage: "person.2")
                 }
 
-            CustomerMapView()
-                .tabItem {
-                    Label("Map", systemImage: "map")
-                }
-
             ContentView()
                 .tabItem {
                     Label("Catalog", systemImage: "tree")

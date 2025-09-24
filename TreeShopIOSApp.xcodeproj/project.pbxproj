@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002EF1B4FD33EFE189ACE2A6 /* AFISSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FFE9B9DE4E86C6EEBA83C2 /* AFISSModels.swift */; };
+		00835CBC6867F6B4E0DA23E4 /* AddressSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA4E6EFDF3DF372E3B0E3C /* AddressSearchManager.swift */; };
+		1B54743ADC70BD6C41275FE2 /* AdvancedWorkOrderMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73410AEB4F1D1369C3BB296 /* AdvancedWorkOrderMapView.swift */; };
 		25A28D34109084F4B2A8EE1A /* CustomerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */; };
+		2E9F31E54DB92FF0D70A6D90 /* TreeScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB9C2C72FE5D626912BC58 /* TreeScoreCalculator.swift */; };
+		4FAB250E4A8EE554B65E5452 /* AFISSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86CE665AEC72980E32B2C4F /* AFISSManager.swift */; };
+		51EC332D912C04B78E469664 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5226158E6D6D6E59CFB23F40 /* MapHelper.swift */; };
 		52AF05C398C13D3B333CF8F1 /* CDWorkOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD18C3E92AF6596A1D84D27 /* CDWorkOrder+CoreDataClass.swift */; };
+		52E45A0D6B611CCAE05B04B0 /* ProposalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62395DDFD2501C51D5DB74E /* ProposalDetailView.swift */; };
+		5642FCA6F2297D1DF36220D5 /* OpsPricingCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B6D9C5462E4BFBE24B9869 /* OpsPricingCalculatorView.swift */; };
+		5BD93FBFC1E6860F4D1B79F4 /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18E3C51BE0777DFB0C5847 /* DrawingManager.swift */; };
 		6DB31FD93DA854E68F805F48 /* SchedulingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA4BC5F98381B17FC3CE3D8 /* SchedulingView.swift */; };
 		7F53663A4BB244719E8279C7 /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487D7850A497C61F0358D99 /* LocationPicker.swift */; };
 		97C729ADABA5427CCDA11AD5 /* EventKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87EFE5DB28AB6C90BC221A /* EventKitManager.swift */; };
@@ -27,11 +36,20 @@
 		A1A1A1AD2B9F000000000014 /* CDProposal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */; };
 		A1A1A1AE2B9F000000000015 /* CDLineItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */; };
 		A1A1A1AF2B9F000000000016 /* TreeShopDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */; };
+		AE5319277D501C55572D43C7 /* TreeInventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666FCA9344B25F79FEDACCCA /* TreeInventoryItem.swift */; };
+		F5950747264895C45CD27C13 /* AFISSAssessmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D2769CFF2821729EC219C9 /* AFISSAssessmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23D2769CFF2821729EC219C9 /* AFISSAssessmentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSAssessmentView.swift; path = Views/AFISSAssessmentView.swift; sourceTree = "<group>"; };
+		35B6D9C5462E4BFBE24B9869 /* OpsPricingCalculatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpsPricingCalculatorView.swift; path = Views/OpsPricingCalculatorView.swift; sourceTree = "<group>"; };
+		40FFE9B9DE4E86C6EEBA83C2 /* AFISSModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSModels.swift; path = Models/AFISSModels.swift; sourceTree = "<group>"; };
 		4DA4BC5F98381B17FC3CE3D8 /* SchedulingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulingView.swift; path = Scheduling/SchedulingView.swift; sourceTree = "<group>"; };
+		5226158E6D6D6E59CFB23F40 /* MapHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapHelper.swift; path = Helpers/MapHelper.swift; sourceTree = "<group>"; };
+		5ACA4E6EFDF3DF372E3B0E3C /* AddressSearchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddressSearchManager.swift; path = Managers/AddressSearchManager.swift; sourceTree = "<group>"; };
+		666FCA9344B25F79FEDACCCA /* TreeInventoryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeInventoryItem.swift; path = Models/TreeScore/TreeInventoryItem.swift; sourceTree = "<group>"; };
 		6A87EFE5DB28AB6C90BC221A /* EventKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventKitManager.swift; path = Scheduling/EventKitManager.swift; sourceTree = "<group>"; };
+		7ABB9C2C72FE5D626912BC58 /* TreeScoreCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeScoreCalculator.swift; path = Models/TreeScore/TreeScoreCalculator.swift; sourceTree = "<group>"; };
 		9AD18C3E92AF6596A1D84D27 /* CDWorkOrder+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDWorkOrder+CoreDataClass.swift"; path = "CoreData/CDWorkOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000000 /* TreeShopIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreeShopIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A1A1A02B9F000000000001 /* TreeShopIOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeShopIOSAppApp.swift; sourceTree = "<group>"; };
@@ -50,8 +68,12 @@
 		A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDProposal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDLineItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodeld; path = TreeShopDataModel.xcdatamodeld; sourceTree = "<group>"; };
+		B62395DDFD2501C51D5DB74E /* ProposalDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalDetailView.swift; path = Views/ProposalDetailView.swift; sourceTree = "<group>"; };
 		C487D7850A497C61F0358D99 /* LocationPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPicker.swift; path = Maps/LocationPicker.swift; sourceTree = "<group>"; };
+		CE18E3C51BE0777DFB0C5847 /* DrawingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawingManager.swift; path = Maps/DrawingManager.swift; sourceTree = "<group>"; };
+		D86CE665AEC72980E32B2C4F /* AFISSManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSManager.swift; path = Managers/AFISSManager.swift; sourceTree = "<group>"; };
 		D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomerMapView.swift; path = Maps/CustomerMapView.swift; sourceTree = "<group>"; };
+		E73410AEB4F1D1369C3BB296 /* AdvancedWorkOrderMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdvancedWorkOrderMapView.swift; path = Maps/AdvancedWorkOrderMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +95,43 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		1970A548940E28A99C9DFF4C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5ACA4E6EFDF3DF372E3B0E3C /* AddressSearchManager.swift */,
+				D86CE665AEC72980E32B2C4F /* AFISSManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		45CE2C21F1BE40107D619481 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AC02833E2F589711E48CB90 /* TreeScore */,
+				40FFE9B9DE4E86C6EEBA83C2 /* AFISSModels.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5AC02833E2F589711E48CB90 /* TreeScore */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB9C2C72FE5D626912BC58 /* TreeScoreCalculator.swift */,
+				666FCA9344B25F79FEDACCCA /* TreeInventoryItem.swift */,
+			);
+			name = TreeScore;
+			sourceTree = "<group>";
+		};
+		7FE7A32F18309427D5094297 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B62395DDFD2501C51D5DB74E /* ProposalDetailView.swift */,
+				35B6D9C5462E4BFBE24B9869 /* OpsPricingCalculatorView.swift */,
+				23D2769CFF2821729EC219C9 /* AFISSAssessmentView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		84EA511E7FC20AD5673C009D /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +139,14 @@
 				4DA4BC5F98381B17FC3CE3D8 /* SchedulingView.swift */,
 			);
 			name = Scheduling;
+			sourceTree = "<group>";
+		};
+		96685681743FFDE7BF34EB7D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5226158E6D6D6E59CFB23F40 /* MapHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		A1A1A1A02B9F000000000020 = {
@@ -112,6 +179,10 @@
 				F17DA0833E5AE811C7057760 /* Maps */,
 				84EA511E7FC20AD5673C009D /* Scheduling */,
 				002739D60AA64B88FD9B178B /* CoreData */,
+				7FE7A32F18309427D5094297 /* Views */,
+				45CE2C21F1BE40107D619481 /* Models */,
+				1970A548940E28A99C9DFF4C /* Managers */,
+				96685681743FFDE7BF34EB7D /* Helpers */,
 			);
 			path = TreeShopIOSApp;
 			sourceTree = "<group>";
@@ -129,6 +200,8 @@
 			children = (
 				D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */,
 				C487D7850A497C61F0358D99 /* LocationPicker.swift */,
+				E73410AEB4F1D1369C3BB296 /* AdvancedWorkOrderMapView.swift */,
+				CE18E3C51BE0777DFB0C5847 /* DrawingManager.swift */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -221,6 +294,17 @@
 				97C729ADABA5427CCDA11AD5 /* EventKitManager.swift in Sources */,
 				6DB31FD93DA854E68F805F48 /* SchedulingView.swift in Sources */,
 				52AF05C398C13D3B333CF8F1 /* CDWorkOrder+CoreDataClass.swift in Sources */,
+				52E45A0D6B611CCAE05B04B0 /* ProposalDetailView.swift in Sources */,
+				2E9F31E54DB92FF0D70A6D90 /* TreeScoreCalculator.swift in Sources */,
+				AE5319277D501C55572D43C7 /* TreeInventoryItem.swift in Sources */,
+				1B54743ADC70BD6C41275FE2 /* AdvancedWorkOrderMapView.swift in Sources */,
+				5BD93FBFC1E6860F4D1B79F4 /* DrawingManager.swift in Sources */,
+				5642FCA6F2297D1DF36220D5 /* OpsPricingCalculatorView.swift in Sources */,
+				00835CBC6867F6B4E0DA23E4 /* AddressSearchManager.swift in Sources */,
+				51EC332D912C04B78E469664 /* MapHelper.swift in Sources */,
+				002EF1B4FD33EFE189ACE2A6 /* AFISSModels.swift in Sources */,
+				4FAB250E4A8EE554B65E5452 /* AFISSManager.swift in Sources */,
+				F5950747264895C45CD27C13 /* AFISSAssessmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

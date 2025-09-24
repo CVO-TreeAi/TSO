@@ -261,7 +261,7 @@ struct ProposalGeneratorView: View {
                 }
 
                 // AFISS Multipliers
-                AFISSSection(afiss: $calculator.afiss)
+                LegacyAFISSSection(afiss: $calculator.afiss)
 
                 // Service Selection
                 Section("Service Type") {
@@ -356,7 +356,7 @@ struct TreeAssessmentRow: View {
     }
 }
 
-struct AFISSSection: View {
+struct LegacyAFISSSection: View {
     @Binding var afiss: AFISSMultiplier
 
     var body: some View {

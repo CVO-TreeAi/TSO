@@ -1,6 +1,7 @@
 import SwiftUI
 import CoreData
 import EventKit
+import MapKit
 
 struct SchedulingView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -45,7 +46,8 @@ struct SchedulingView: View {
                     CalendarScheduleView(workOrders: Array(workOrders), selectedDate: $selectedDate)
 
                 case .map:
-                    WorkOrderMapView(workOrders: Array(workOrders))
+                    AdvancedWorkOrderMapView(workOrders: Array(workOrders))
+                        .environment(\.managedObjectContext, viewContext)
                 }
             }
             .navigationTitle("Schedule & Dispatch")
@@ -238,16 +240,7 @@ struct CalendarScheduleView: View {
     }
 }
 
-struct WorkOrderMapView: View {
-    let workOrders: [CDWorkOrder]
-
-    var body: some View {
-        Text("Map view showing work order locations")
-            .foregroundColor(.secondary)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(.systemGray6))
-    }
-}
+// WorkOrderMapView and related structs removed - using AdvancedWorkOrderMapView instead
 
 struct CreateWorkOrderView: View {
     @Environment(\.dismiss) private var dismiss
