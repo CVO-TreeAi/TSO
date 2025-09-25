@@ -10,9 +10,12 @@
 		001DE6D711E842630566D43E /* LoadoutsHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A6F1670B57F861D07199DB /* LoadoutsHubView.swift */; };
 		044971584DFAFDBE62980E75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9622D57233309EFB8D97002 /* ContentView.swift */; };
 		071690344EC11B9613E1CC08 /* SchedulingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E15A7B8A91E4A6E969ED1 /* SchedulingView.swift */; };
+		083688E5BD07677974C5B4C5 /* CoreDataSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF68ED9CCB62A667035CE69 /* CoreDataSyncManager.swift */; };
 		0975A1499F4B1DA5D908630C /* AddressSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BDBB2F11208294654966 /* AddressSearchManager.swift */; };
 		1881A74CB72C8CE662D86806 /* OpsPricingCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80A0ECF1BB7F6AAC60A71F /* OpsPricingCalculatorView.swift */; };
+		24178F566DD041414B1A5EF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F240FAB77464AD3F3397631A /* Foundation.framework */; };
 		252F2C99642AA444730B7054 /* LineItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F99A69B8F201625A26815D0 /* LineItemDetailView.swift */; };
+		313DB3776D998CAFBAC2AB6A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C932A77103C57AEA3DDE301 /* ProfileView.swift */; };
 		3A076A6BFF3382EFD66F3424 /* ProposalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30268088C8B1E2FCA8D26D25 /* ProposalsListView.swift */; };
 		3DC920F3086C119129040A9B /* EquipmentDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C0438D20F71949F75EF685 /* EquipmentDirectoryView.swift */; };
 		3FC630E443529EE94FFD4AB5 /* AFISSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771BAF0A3D673DD5575078A /* AFISSModels.swift */; };
@@ -24,6 +27,9 @@
 		6F28CEACEFE2518D4593C5BA /* TreeShopIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF52215D13B280C8703BA7 /* TreeShopIOSAppApp.swift */; };
 		79D7B0989858CBAA938DAF76 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65526291712A0E818B365F5 /* MapHelper.swift */; };
 		816BF6588335D0E706E6A21A /* PerformanceOptimizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2AACA536DACD11D255C16 /* PerformanceOptimizations.swift */; };
+		83BB9638DF5DC49B517E8FB3 /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB510B022DCD45D60634C28 /* SecurityService.swift */; };
+		84D5708D986DB5D87E6D4453 /* TreeScoreCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56900E0F1A98EAEDC8CC08 /* TreeScoreCalculatorTests.swift */; };
+		8B42D4179E02887641CFA1B6 /* LoadoutManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E876DA61790F0E0C03A3569E /* LoadoutManagerTests.swift */; };
 		90EB4D9815F17BBFFB4AFAA7 /* ProposalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C2A43257333CD5B762D14 /* ProposalDetailView.swift */; };
 		92320FD87B3E753C1F9AC5BB /* CDProposal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8FCC5218B1FE40E99F264 /* CDProposal+CoreDataClass.swift */; };
 		9AB5745318D9FF0D4831405B /* CustomerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114458832109047B16573D8 /* CustomerMapView.swift */; };
@@ -38,17 +44,32 @@
 		BF52FADFCD0DB167E271F29F /* EmployeeDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DBD4EAFE61A5A1C8D9563 /* EmployeeDirectoryView.swift */; };
 		C6123542B15F036CEE319231 /* ProposalBuilderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4EFEC6C58DBF7C2A7C6 /* ProposalBuilderV2.swift */; };
 		C63A64CC637C7201A49FDA64 /* AdvancedWorkOrderMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356E9399A772020E09CDB8E /* AdvancedWorkOrderMapView.swift */; };
+		C8FB5F97C307A29320962892 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366372FDD0D502AF8059F02B /* AuthenticationManager.swift */; };
 		D38A3B1CC53BB84A2AE95725 /* CDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350D2E16A2B41B1E51AEFD /* CDCustomer+CoreDataClass.swift */; };
+		D6045322EE192B68619FA903 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4E66F098D7CE0B586287C /* CoreDataTests.swift */; };
 		D805F2005A87E27307219470 /* CustomersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA3A4335DEC04978AD4F72 /* CustomersView.swift */; };
+		DB4098CF3A5AE729A4C5604E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80576CC9052B6AB87672CE2A /* APIService.swift */; };
 		EC96753E489FD53E8F8CE802 /* LoadoutManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A92FD9072754B5B73EF3F /* LoadoutManagerView.swift */; };
 		F5CCF8A9A09E92909D2B6058 /* TreeInventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A51C4267E3C88F3D48CB13 /* TreeInventoryItem.swift */; };
 		F68A53AFF2A227CC17F574FB /* LoadoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE8C231E4B5886AA86CC17 /* LoadoutManager.swift */; };
 		F89076EFFBED2832E21E8902 /* AFISSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F993754AF9A0140A6495A7 /* AFISSManager.swift */; };
+		FAFA2AD510D4E66AA5FA2D1A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689029174C71D060D811318 /* LoginView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FEDA90C28FCA3B090A30B515 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1A1A1A02B9F000000000060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1A1A1A02B9F000000000040;
+			remoteInfo = TreeShopIOSApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00F993754AF9A0140A6495A7 /* AFISSManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSManager.swift; path = TreeShopIOSApp/Managers/AFISSManager.swift; sourceTree = "<group>"; };
 		01200F403721D7C53C2F5F6E /* CDLineItem+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDLineItem+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDLineItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0CB510B022DCD45D60634C28 /* SecurityService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecurityService.swift; path = TreeShopIOSApp/Services/SecurityService.swift; sourceTree = "<group>"; };
 		10AA3A4335DEC04978AD4F72 /* CustomersView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomersView.swift; path = TreeShopIOSApp/Views/CustomersView.swift; sourceTree = "<group>"; };
 		13C0438D20F71949F75EF685 /* EquipmentDirectoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EquipmentDirectoryView.swift; path = TreeShopIOSApp/Views/Loadouts/EquipmentDirectoryView.swift; sourceTree = "<group>"; };
 		19BE8C231E4B5886AA86CC17 /* LoadoutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutManager.swift; path = TreeShopIOSApp/Managers/LoadoutManager.swift; sourceTree = "<group>"; };
@@ -56,18 +77,25 @@
 		1F99A69B8F201625A26815D0 /* LineItemDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineItemDetailView.swift; path = TreeShopIOSApp/LineItemDetailView.swift; sourceTree = "<group>"; };
 		30268088C8B1E2FCA8D26D25 /* ProposalsListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalsListView.swift; path = TreeShopIOSApp/Views/ProposalsListView.swift; sourceTree = "<group>"; };
 		309E15A7B8A91E4A6E969ED1 /* SchedulingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulingView.swift; path = TreeShopIOSApp/Scheduling/SchedulingView.swift; sourceTree = "<group>"; };
+		366372FDD0D502AF8059F02B /* AuthenticationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationManager.swift; path = TreeShopIOSApp/Services/AuthenticationManager.swift; sourceTree = "<group>"; };
 		37E91AE983D735BA610E90E4 /* LineItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineItem.swift; path = TreeShopIOSApp/LineItem.swift; sourceTree = "<group>"; };
 		3AF8FCC5218B1FE40E99F264 /* CDProposal+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDProposal+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDProposal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DCF52215D13B280C8703BA7 /* TreeShopIOSAppApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeShopIOSAppApp.swift; path = TreeShopIOSApp/TreeShopIOSAppApp.swift; sourceTree = "<group>"; };
+		4C56900E0F1A98EAEDC8CC08 /* TreeScoreCalculatorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeScoreCalculatorTests.swift; path = TreeShopIOSAppTests/TreeScoreCalculatorTests.swift; sourceTree = "<group>"; };
+		51D4E66F098D7CE0B586287C /* CoreDataTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreDataTests.swift; path = TreeShopIOSAppTests/CoreDataTests.swift; sourceTree = "<group>"; };
 		57E493DEB067126285251659 /* MainTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = TreeShopIOSApp/MainTabView.swift; sourceTree = "<group>"; };
 		639CC4EFEC6C58DBF7C2A7C6 /* ProposalBuilderV2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalBuilderV2.swift; path = TreeShopIOSApp/ProposalBuilderV2.swift; sourceTree = "<group>"; };
+		6C932A77103C57AEA3DDE301 /* ProfileView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = TreeShopIOSApp/Views/Profile/ProfileView.swift; sourceTree = "<group>"; };
 		722B29D51B6A85038E0C54A3 /* DrawingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawingManager.swift; path = TreeShopIOSApp/Maps/DrawingManager.swift; sourceTree = "<group>"; };
 		770492D32679CF6712A2BA71 /* ProposalGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalGenerator.swift; path = TreeShopIOSApp/ProposalGenerator.swift; sourceTree = "<group>"; };
 		7771BAF0A3D673DD5575078A /* AFISSModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSModels.swift; path = TreeShopIOSApp/Models/AFISSModels.swift; sourceTree = "<group>"; };
+		7A57090C5BAF231D5A0E690F /* TreeShopIOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeShopIOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7362BA6B6016612D3AD979 /* LocationPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPicker.swift; path = TreeShopIOSApp/Maps/LocationPicker.swift; sourceTree = "<group>"; };
 		7B9DB5429CC1717B31DCDAF2 /* PersistenceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PersistenceController.swift; path = TreeShopIOSApp/CoreData/PersistenceController.swift; sourceTree = "<group>"; };
+		80576CC9052B6AB87672CE2A /* APIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = TreeShopIOSApp/Services/APIService.swift; sourceTree = "<group>"; };
 		84350D2E16A2B41B1E51AEFD /* CDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDCustomer+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		852A92FD9072754B5B73EF3F /* LoadoutManagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutManagerView.swift; path = TreeShopIOSApp/Views/Loadouts/LoadoutManagerView.swift; sourceTree = "<group>"; };
+		8AF68ED9CCB62A667035CE69 /* CoreDataSyncManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreDataSyncManager.swift; path = TreeShopIOSApp/Services/CoreDataSyncManager.swift; sourceTree = "<group>"; };
 		A114458832109047B16573D8 /* CustomerMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomerMapView.swift; path = TreeShopIOSApp/Maps/CustomerMapView.swift; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000000 /* TreeShopIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreeShopIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25B2F7B0C8B1565E5BC1A41 /* CDWorkOrder+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDWorkOrder+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDWorkOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -78,11 +106,14 @@
 		C356E9399A772020E09CDB8E /* AdvancedWorkOrderMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdvancedWorkOrderMapView.swift; path = TreeShopIOSApp/Maps/AdvancedWorkOrderMapView.swift; sourceTree = "<group>"; };
 		CF8DBD4EAFE61A5A1C8D9563 /* EmployeeDirectoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmployeeDirectoryView.swift; path = TreeShopIOSApp/Views/Loadouts/EmployeeDirectoryView.swift; sourceTree = "<group>"; };
 		D65526291712A0E818B365F5 /* MapHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapHelper.swift; path = TreeShopIOSApp/Helpers/MapHelper.swift; sourceTree = "<group>"; };
+		D689029174C71D060D811318 /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = TreeShopIOSApp/Views/Auth/LoginView.swift; sourceTree = "<group>"; };
 		DA3C9E26BB9789BBC52224BE /* TreeShopDataModel.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = TreeShopDataModel.xcdatamodel; sourceTree = "<group>"; };
 		DA6C2A43257333CD5B762D14 /* ProposalDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalDetailView.swift; path = TreeShopIOSApp/Views/ProposalDetailView.swift; sourceTree = "<group>"; };
 		E5A51C4267E3C88F3D48CB13 /* TreeInventoryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeInventoryItem.swift; path = TreeShopIOSApp/Models/TreeScore/TreeInventoryItem.swift; sourceTree = "<group>"; };
+		E876DA61790F0E0C03A3569E /* LoadoutManagerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutManagerTests.swift; path = TreeShopIOSAppTests/LoadoutManagerTests.swift; sourceTree = "<group>"; };
 		E9EF8C6A962DA5466274395F /* AFISSAssessmentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSAssessmentView.swift; path = TreeShopIOSApp/Views/AFISSAssessmentView.swift; sourceTree = "<group>"; };
 		EC1C690F4A2F9AF347F56C3D /* TreeScoreCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeScoreCalculator.swift; path = TreeShopIOSApp/Models/TreeScore/TreeScoreCalculator.swift; sourceTree = "<group>"; };
+		F240FAB77464AD3F3397631A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FE66BDBB2F11208294654966 /* AddressSearchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddressSearchManager.swift; path = TreeShopIOSApp/Managers/AddressSearchManager.swift; sourceTree = "<group>"; };
 		FF80A0ECF1BB7F6AAC60A71F /* OpsPricingCalculatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpsPricingCalculatorView.swift; path = TreeShopIOSApp/Views/OpsPricingCalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +126,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA19B513E0B1500094E4EB27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24178F566DD041414B1A5EF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -104,6 +143,14 @@
 				1BA2AACA536DACD11D255C16 /* PerformanceOptimizations.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		0F3814C62CD74DA839E2FC77 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F240FAB77464AD3F3397631A /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		206CBD8AAAC97710CF7FA4F1 /* CoreData */ = {
@@ -136,6 +183,14 @@
 			name = Scheduling;
 			sourceTree = "<group>";
 		};
+		2FAF1C33736D81523065093C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F3814C62CD74DA839E2FC77 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C4C862C3ADD21F3188C09D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,12 +204,45 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		789C6CA7DFEBBEB126A2BC27 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		8739C2062B449C8470625FB9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		8CAC48D8EB411FFB42B882CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8739C2062B449C8470625FB9 /* Auth */,
+				789C6CA7DFEBBEB126A2BC27 /* Profile */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		92EB61596E7F93CD013450C7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				D65526291712A0E818B365F5 /* MapHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		986A2ADB0CE50D83AC6B2742 /* TreeShopIOSAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C56900E0F1A98EAEDC8CC08 /* TreeScoreCalculatorTests.swift */,
+				51D4E66F098D7CE0B586287C /* CoreDataTests.swift */,
+				E876DA61790F0E0C03A3569E /* LoadoutManagerTests.swift */,
+			);
+			name = TreeShopIOSAppTests;
 			sourceTree = "<group>";
 		};
 		9CE76463A6055170E502AFE4 /* Managers */ = {
@@ -173,6 +261,8 @@
 				A1A1A1A02B9F000000000021 /* TreeShopIOSApp */,
 				A1A1A1A02B9F000000000030 /* Products */,
 				C9BD63DDD61C44955C21F1E9 /* TreeShopIOSApp */,
+				986A2ADB0CE50D83AC6B2742 /* TreeShopIOSAppTests */,
+				2FAF1C33736D81523065093C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +271,8 @@
 			children = (
 				E2B70D92B15EB197F2EB4DC4 /* TreeShopDataModel.xcdatamodeld */,
 				026E2F871B27AC30332D0EB0 /* Utilities */,
+				E75F2BE59D7EB618F696165D /* Services */,
+				8CAC48D8EB411FFB42B882CC /* Views */,
 			);
 			path = TreeShopIOSApp;
 			sourceTree = "<group>";
@@ -189,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A1A1A02B9F000000000000 /* TreeShopIOSApp.app */,
+				7A57090C5BAF231D5A0E690F /* TreeShopIOSAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +329,13 @@
 			name = Maps;
 			sourceTree = "<group>";
 		};
+		E75F2BE59D7EB618F696165D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		FAD672F75007E30111AB1EA5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +366,24 @@
 			productReference = A1A1A1A02B9F000000000000 /* TreeShopIOSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DBBB82BDFCC8844A35071320 /* TreeShopIOSAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C900AC39340908085FB57DEF /* Build configuration list for PBXNativeTarget "TreeShopIOSAppTests" */;
+			buildPhases = (
+				B570E79438DB2A80A2AF0971 /* Sources */,
+				DA19B513E0B1500094E4EB27 /* Frameworks */,
+				C133C3520C1BBDC58558E488 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7501B301CE4FC011B69CC2A1 /* PBXTargetDependency */,
+			);
+			name = TreeShopIOSAppTests;
+			productName = TreeShopIOSAppTests;
+			productReference = 7A57090C5BAF231D5A0E690F /* TreeShopIOSAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -295,6 +413,7 @@
 			projectRoot = "";
 			targets = (
 				A1A1A1A02B9F000000000040 /* TreeShopIOSApp */,
+				DBBB82BDFCC8844A35071320 /* TreeShopIOSAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,6 +424,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B319BE4250194B3249A11DF /* TreeShopDataModel.xcdatamodeld in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C133C3520C1BBDC58558E488 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +477,46 @@
 				044971584DFAFDBE62980E75 /* ContentView.swift in Sources */,
 				79D7B0989858CBAA938DAF76 /* MapHelper.swift in Sources */,
 				816BF6588335D0E706E6A21A /* PerformanceOptimizations.swift in Sources */,
+				DB4098CF3A5AE729A4C5604E /* APIService.swift in Sources */,
+				83BB9638DF5DC49B517E8FB3 /* SecurityService.swift in Sources */,
+				C8FB5F97C307A29320962892 /* AuthenticationManager.swift in Sources */,
+				083688E5BD07677974C5B4C5 /* CoreDataSyncManager.swift in Sources */,
+				FAFA2AD510D4E66AA5FA2D1A /* LoginView.swift in Sources */,
+				313DB3776D998CAFBAC2AB6A /* ProfileView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B570E79438DB2A80A2AF0971 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D5708D986DB5D87E6D4453 /* TreeScoreCalculatorTests.swift in Sources */,
+				D6045322EE192B68619FA903 /* CoreDataTests.swift in Sources */,
+				8B42D4179E02887641CFA1B6 /* LoadoutManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7501B301CE4FC011B69CC2A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TreeShopIOSApp;
+			target = A1A1A1A02B9F000000000040 /* TreeShopIOSApp */;
+			targetProxy = FEDA90C28FCA3B090A30B515 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5A98076A03632148E959C284 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
 		A1A1A1A02B9F000000000080 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -536,6 +696,16 @@
 			};
 			name = Release;
 		};
+		AE1B9C90280D11F5800E1A34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +723,15 @@
 			buildConfigurations = (
 				A1A1A1A02B9F000000000080 /* Debug */,
 				A1A1A1A02B9F000000000081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C900AC39340908085FB57DEF /* Build configuration list for PBXNativeTarget "TreeShopIOSAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE1B9C90280D11F5800E1A34 /* Release */,
+				5A98076A03632148E959C284 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
