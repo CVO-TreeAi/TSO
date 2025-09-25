@@ -1,5 +1,7 @@
 import SwiftUI
 
+// This ViewModel is defined in LoadoutsHubView.swift
+// but we need it here too for the dashboard
 struct MainTabView: View {
     var body: some View {
         TabView {
@@ -33,6 +35,7 @@ struct MainTabView: View {
 
 struct DashboardView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @StateObject private var loadoutViewModel = LoadoutSystemViewModel()
     @State private var stats = (totalProposals: 0, totalValue: 0.0, avgValue: 0.0, conversionRate: 0.0)
 
     var body: some View {
@@ -105,6 +108,18 @@ struct DashboardView: View {
                                     subtitle: "Browse available services",
                                     icon: "list.bullet.rectangle",
                                     color: .orange
+                                )
+                            }
+
+                            NavigationLink(destination: LoadoutsHubView()
+                                .environmentObject(loadoutViewModel.equipmentManager)
+                                .environmentObject(loadoutViewModel.employeeManager)
+                                .environmentObject(loadoutViewModel.loadoutManager)) {
+                                QuickActionRow(
+                                    title: "Loadout Manager",
+                                    subtitle: "Manage equipment and crew costs",
+                                    icon: "list.bullet.rectangle.portrait.fill",
+                                    color: .purple
                                 )
                             }
                         }

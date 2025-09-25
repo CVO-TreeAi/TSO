@@ -7,73 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		002EF1B4FD33EFE189ACE2A6 /* AFISSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FFE9B9DE4E86C6EEBA83C2 /* AFISSModels.swift */; };
-		00835CBC6867F6B4E0DA23E4 /* AddressSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA4E6EFDF3DF372E3B0E3C /* AddressSearchManager.swift */; };
-		1B54743ADC70BD6C41275FE2 /* AdvancedWorkOrderMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73410AEB4F1D1369C3BB296 /* AdvancedWorkOrderMapView.swift */; };
-		25A28D34109084F4B2A8EE1A /* CustomerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */; };
-		2E9F31E54DB92FF0D70A6D90 /* TreeScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB9C2C72FE5D626912BC58 /* TreeScoreCalculator.swift */; };
-		4FAB250E4A8EE554B65E5452 /* AFISSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86CE665AEC72980E32B2C4F /* AFISSManager.swift */; };
-		51EC332D912C04B78E469664 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5226158E6D6D6E59CFB23F40 /* MapHelper.swift */; };
-		52AF05C398C13D3B333CF8F1 /* CDWorkOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD18C3E92AF6596A1D84D27 /* CDWorkOrder+CoreDataClass.swift */; };
-		52E45A0D6B611CCAE05B04B0 /* ProposalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62395DDFD2501C51D5DB74E /* ProposalDetailView.swift */; };
-		5642FCA6F2297D1DF36220D5 /* OpsPricingCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B6D9C5462E4BFBE24B9869 /* OpsPricingCalculatorView.swift */; };
-		5BD93FBFC1E6860F4D1B79F4 /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18E3C51BE0777DFB0C5847 /* DrawingManager.swift */; };
-		6DB31FD93DA854E68F805F48 /* SchedulingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA4BC5F98381B17FC3CE3D8 /* SchedulingView.swift */; };
-		7F53663A4BB244719E8279C7 /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487D7850A497C61F0358D99 /* LocationPicker.swift */; };
-		97C729ADABA5427CCDA11AD5 /* EventKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87EFE5DB28AB6C90BC221A /* EventKitManager.swift */; };
-		A1A1A1A12B9F000000000001 /* TreeShopIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000001 /* TreeShopIOSAppApp.swift */; };
-		A1A1A1A22B9F000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000002 /* ContentView.swift */; };
-		A1A1A1A32B9F000000000003 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000003 /* LineItem.swift */; };
-		A1A1A1A42B9F000000000004 /* LineItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000004 /* LineItemDetailView.swift */; };
-		A1A1A1A52B9F000000000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000005 /* Assets.xcassets */; };
-		A1A1A1A62B9F000000000007 /* ProposalGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000007 /* ProposalGenerator.swift */; };
-		A1A1A1A72B9F000000000008 /* ProposalBuilderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000008 /* ProposalBuilderV2.swift */; };
-		A1A1A1A82B9F000000000009 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000009 /* PersistenceController.swift */; };
-		A1A1A1A92B9F000000000010 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000010 /* MainTabView.swift */; };
-		A1A1A1AA2B9F000000000011 /* CustomersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000011 /* CustomersView.swift */; };
-		A1A1A1AB2B9F000000000012 /* ProposalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000012 /* ProposalsListView.swift */; };
-		A1A1A1AC2B9F000000000013 /* CDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000013 /* CDCustomer+CoreDataClass.swift */; };
-		A1A1A1AD2B9F000000000014 /* CDProposal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */; };
-		A1A1A1AE2B9F000000000015 /* CDLineItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */; };
-		A1A1A1AF2B9F000000000016 /* TreeShopDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */; };
-		AE5319277D501C55572D43C7 /* TreeInventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666FCA9344B25F79FEDACCCA /* TreeInventoryItem.swift */; };
-		F5950747264895C45CD27C13 /* AFISSAssessmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D2769CFF2821729EC219C9 /* AFISSAssessmentView.swift */; };
+		001DE6D711E842630566D43E /* LoadoutsHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A6F1670B57F861D07199DB /* LoadoutsHubView.swift */; };
+		044971584DFAFDBE62980E75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9622D57233309EFB8D97002 /* ContentView.swift */; };
+		071690344EC11B9613E1CC08 /* SchedulingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E15A7B8A91E4A6E969ED1 /* SchedulingView.swift */; };
+		0975A1499F4B1DA5D908630C /* AddressSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66BDBB2F11208294654966 /* AddressSearchManager.swift */; };
+		1881A74CB72C8CE662D86806 /* OpsPricingCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80A0ECF1BB7F6AAC60A71F /* OpsPricingCalculatorView.swift */; };
+		252F2C99642AA444730B7054 /* LineItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F99A69B8F201625A26815D0 /* LineItemDetailView.swift */; };
+		3A076A6BFF3382EFD66F3424 /* ProposalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30268088C8B1E2FCA8D26D25 /* ProposalsListView.swift */; };
+		3DC920F3086C119129040A9B /* EquipmentDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C0438D20F71949F75EF685 /* EquipmentDirectoryView.swift */; };
+		3FC630E443529EE94FFD4AB5 /* AFISSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771BAF0A3D673DD5575078A /* AFISSModels.swift */; };
+		45694B16B98546EB97A39C4B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E493DEB067126285251659 /* MainTabView.swift */; };
+		4B3674B7270BD8B382D23889 /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7362BA6B6016612D3AD979 /* LocationPicker.swift */; };
+		4F77C775B1A32549B3A727F5 /* CDLineItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01200F403721D7C53C2F5F6E /* CDLineItem+CoreDataClass.swift */; };
+		681AEB632B528F9F623EF38B /* CDWorkOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25B2F7B0C8B1565E5BC1A41 /* CDWorkOrder+CoreDataClass.swift */; };
+		6B319BE4250194B3249A11DF /* TreeShopDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = E2B70D92B15EB197F2EB4DC4 /* TreeShopDataModel.xcdatamodeld */; };
+		6F28CEACEFE2518D4593C5BA /* TreeShopIOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF52215D13B280C8703BA7 /* TreeShopIOSAppApp.swift */; };
+		79D7B0989858CBAA938DAF76 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65526291712A0E818B365F5 /* MapHelper.swift */; };
+		816BF6588335D0E706E6A21A /* PerformanceOptimizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2AACA536DACD11D255C16 /* PerformanceOptimizations.swift */; };
+		90EB4D9815F17BBFFB4AFAA7 /* ProposalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C2A43257333CD5B762D14 /* ProposalDetailView.swift */; };
+		92320FD87B3E753C1F9AC5BB /* CDProposal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8FCC5218B1FE40E99F264 /* CDProposal+CoreDataClass.swift */; };
+		9AB5745318D9FF0D4831405B /* CustomerMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114458832109047B16573D8 /* CustomerMapView.swift */; };
+		A6A089B0589B74C7C4D39318 /* LoadoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C98D1B1CBF5283F7C2E348 /* LoadoutModels.swift */; };
+		A8FCB0B5CCCBCDC925ECBF68 /* EventKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120E225C2544B550259A5EE /* EventKitManager.swift */; };
+		AC1A0CEBAB4D6F626777B774 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E91AE983D735BA610E90E4 /* LineItem.swift */; };
+		AE618031EC0D6CE7B3818805 /* ProposalGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770492D32679CF6712A2BA71 /* ProposalGenerator.swift */; };
+		AFE9AF4BA6E4F9EF5172B903 /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722B29D51B6A85038E0C54A3 /* DrawingManager.swift */; };
+		B6FA2650B68D45D89D0DB7F6 /* TreeScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C690F4A2F9AF347F56C3D /* TreeScoreCalculator.swift */; };
+		B9034D1E1CED1375E7823BE6 /* AFISSAssessmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EF8C6A962DA5466274395F /* AFISSAssessmentView.swift */; };
+		BCD7BE13D085AA0CAF7373AF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9DB5429CC1717B31DCDAF2 /* PersistenceController.swift */; };
+		BF52FADFCD0DB167E271F29F /* EmployeeDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DBD4EAFE61A5A1C8D9563 /* EmployeeDirectoryView.swift */; };
+		C6123542B15F036CEE319231 /* ProposalBuilderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639CC4EFEC6C58DBF7C2A7C6 /* ProposalBuilderV2.swift */; };
+		C63A64CC637C7201A49FDA64 /* AdvancedWorkOrderMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356E9399A772020E09CDB8E /* AdvancedWorkOrderMapView.swift */; };
+		D38A3B1CC53BB84A2AE95725 /* CDCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350D2E16A2B41B1E51AEFD /* CDCustomer+CoreDataClass.swift */; };
+		D805F2005A87E27307219470 /* CustomersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AA3A4335DEC04978AD4F72 /* CustomersView.swift */; };
+		EC96753E489FD53E8F8CE802 /* LoadoutManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A92FD9072754B5B73EF3F /* LoadoutManagerView.swift */; };
+		F5CCF8A9A09E92909D2B6058 /* TreeInventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A51C4267E3C88F3D48CB13 /* TreeInventoryItem.swift */; };
+		F68A53AFF2A227CC17F574FB /* LoadoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE8C231E4B5886AA86CC17 /* LoadoutManager.swift */; };
+		F89076EFFBED2832E21E8902 /* AFISSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F993754AF9A0140A6495A7 /* AFISSManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23D2769CFF2821729EC219C9 /* AFISSAssessmentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSAssessmentView.swift; path = Views/AFISSAssessmentView.swift; sourceTree = "<group>"; };
-		35B6D9C5462E4BFBE24B9869 /* OpsPricingCalculatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpsPricingCalculatorView.swift; path = Views/OpsPricingCalculatorView.swift; sourceTree = "<group>"; };
-		40FFE9B9DE4E86C6EEBA83C2 /* AFISSModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSModels.swift; path = Models/AFISSModels.swift; sourceTree = "<group>"; };
-		4DA4BC5F98381B17FC3CE3D8 /* SchedulingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulingView.swift; path = Scheduling/SchedulingView.swift; sourceTree = "<group>"; };
-		5226158E6D6D6E59CFB23F40 /* MapHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapHelper.swift; path = Helpers/MapHelper.swift; sourceTree = "<group>"; };
-		5ACA4E6EFDF3DF372E3B0E3C /* AddressSearchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddressSearchManager.swift; path = Managers/AddressSearchManager.swift; sourceTree = "<group>"; };
-		666FCA9344B25F79FEDACCCA /* TreeInventoryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeInventoryItem.swift; path = Models/TreeScore/TreeInventoryItem.swift; sourceTree = "<group>"; };
-		6A87EFE5DB28AB6C90BC221A /* EventKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventKitManager.swift; path = Scheduling/EventKitManager.swift; sourceTree = "<group>"; };
-		7ABB9C2C72FE5D626912BC58 /* TreeScoreCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeScoreCalculator.swift; path = Models/TreeScore/TreeScoreCalculator.swift; sourceTree = "<group>"; };
-		9AD18C3E92AF6596A1D84D27 /* CDWorkOrder+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDWorkOrder+CoreDataClass.swift"; path = "CoreData/CDWorkOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		00F993754AF9A0140A6495A7 /* AFISSManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSManager.swift; path = TreeShopIOSApp/Managers/AFISSManager.swift; sourceTree = "<group>"; };
+		01200F403721D7C53C2F5F6E /* CDLineItem+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDLineItem+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDLineItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		10AA3A4335DEC04978AD4F72 /* CustomersView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomersView.swift; path = TreeShopIOSApp/Views/CustomersView.swift; sourceTree = "<group>"; };
+		13C0438D20F71949F75EF685 /* EquipmentDirectoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EquipmentDirectoryView.swift; path = TreeShopIOSApp/Views/Loadouts/EquipmentDirectoryView.swift; sourceTree = "<group>"; };
+		19BE8C231E4B5886AA86CC17 /* LoadoutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutManager.swift; path = TreeShopIOSApp/Managers/LoadoutManager.swift; sourceTree = "<group>"; };
+		1BA2AACA536DACD11D255C16 /* PerformanceOptimizations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PerformanceOptimizations.swift; path = Utilities/PerformanceOptimizations.swift; sourceTree = "<group>"; };
+		1F99A69B8F201625A26815D0 /* LineItemDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineItemDetailView.swift; path = TreeShopIOSApp/LineItemDetailView.swift; sourceTree = "<group>"; };
+		30268088C8B1E2FCA8D26D25 /* ProposalsListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalsListView.swift; path = TreeShopIOSApp/Views/ProposalsListView.swift; sourceTree = "<group>"; };
+		309E15A7B8A91E4A6E969ED1 /* SchedulingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulingView.swift; path = TreeShopIOSApp/Scheduling/SchedulingView.swift; sourceTree = "<group>"; };
+		37E91AE983D735BA610E90E4 /* LineItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineItem.swift; path = TreeShopIOSApp/LineItem.swift; sourceTree = "<group>"; };
+		3AF8FCC5218B1FE40E99F264 /* CDProposal+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDProposal+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDProposal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DCF52215D13B280C8703BA7 /* TreeShopIOSAppApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeShopIOSAppApp.swift; path = TreeShopIOSApp/TreeShopIOSAppApp.swift; sourceTree = "<group>"; };
+		57E493DEB067126285251659 /* MainTabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainTabView.swift; path = TreeShopIOSApp/MainTabView.swift; sourceTree = "<group>"; };
+		639CC4EFEC6C58DBF7C2A7C6 /* ProposalBuilderV2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalBuilderV2.swift; path = TreeShopIOSApp/ProposalBuilderV2.swift; sourceTree = "<group>"; };
+		722B29D51B6A85038E0C54A3 /* DrawingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawingManager.swift; path = TreeShopIOSApp/Maps/DrawingManager.swift; sourceTree = "<group>"; };
+		770492D32679CF6712A2BA71 /* ProposalGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalGenerator.swift; path = TreeShopIOSApp/ProposalGenerator.swift; sourceTree = "<group>"; };
+		7771BAF0A3D673DD5575078A /* AFISSModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSModels.swift; path = TreeShopIOSApp/Models/AFISSModels.swift; sourceTree = "<group>"; };
+		7A7362BA6B6016612D3AD979 /* LocationPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPicker.swift; path = TreeShopIOSApp/Maps/LocationPicker.swift; sourceTree = "<group>"; };
+		7B9DB5429CC1717B31DCDAF2 /* PersistenceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PersistenceController.swift; path = TreeShopIOSApp/CoreData/PersistenceController.swift; sourceTree = "<group>"; };
+		84350D2E16A2B41B1E51AEFD /* CDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDCustomer+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		852A92FD9072754B5B73EF3F /* LoadoutManagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutManagerView.swift; path = TreeShopIOSApp/Views/Loadouts/LoadoutManagerView.swift; sourceTree = "<group>"; };
+		A114458832109047B16573D8 /* CustomerMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomerMapView.swift; path = TreeShopIOSApp/Maps/CustomerMapView.swift; sourceTree = "<group>"; };
 		A1A1A1A02B9F000000000000 /* TreeShopIOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreeShopIOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1A1A1A02B9F000000000001 /* TreeShopIOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeShopIOSAppApp.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000003 /* LineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000004 /* LineItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemDetailView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000007 /* ProposalGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalGenerator.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000008 /* ProposalBuilderV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalBuilderV2.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000009 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData/PersistenceController.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000010 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000011 /* CustomersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/CustomersView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000012 /* ProposalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ProposalsListView.swift; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000013 /* CDCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDProposal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/CDLineItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodeld; path = TreeShopDataModel.xcdatamodeld; sourceTree = "<group>"; };
-		B62395DDFD2501C51D5DB74E /* ProposalDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalDetailView.swift; path = Views/ProposalDetailView.swift; sourceTree = "<group>"; };
-		C487D7850A497C61F0358D99 /* LocationPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPicker.swift; path = Maps/LocationPicker.swift; sourceTree = "<group>"; };
-		CE18E3C51BE0777DFB0C5847 /* DrawingManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DrawingManager.swift; path = Maps/DrawingManager.swift; sourceTree = "<group>"; };
-		D86CE665AEC72980E32B2C4F /* AFISSManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSManager.swift; path = Managers/AFISSManager.swift; sourceTree = "<group>"; };
-		D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomerMapView.swift; path = Maps/CustomerMapView.swift; sourceTree = "<group>"; };
-		E73410AEB4F1D1369C3BB296 /* AdvancedWorkOrderMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdvancedWorkOrderMapView.swift; path = Maps/AdvancedWorkOrderMapView.swift; sourceTree = "<group>"; };
+		A25B2F7B0C8B1565E5BC1A41 /* CDWorkOrder+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CDWorkOrder+CoreDataClass.swift"; path = "TreeShopIOSApp/CoreData/CDWorkOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A4A6F1670B57F861D07199DB /* LoadoutsHubView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutsHubView.swift; path = TreeShopIOSApp/Views/Loadouts/LoadoutsHubView.swift; sourceTree = "<group>"; };
+		B0C98D1B1CBF5283F7C2E348 /* LoadoutModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadoutModels.swift; path = TreeShopIOSApp/Models/LoadoutModels.swift; sourceTree = "<group>"; };
+		B9622D57233309EFB8D97002 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TreeShopIOSApp/ContentView.swift; sourceTree = "<group>"; };
+		C120E225C2544B550259A5EE /* EventKitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventKitManager.swift; path = TreeShopIOSApp/Scheduling/EventKitManager.swift; sourceTree = "<group>"; };
+		C356E9399A772020E09CDB8E /* AdvancedWorkOrderMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdvancedWorkOrderMapView.swift; path = TreeShopIOSApp/Maps/AdvancedWorkOrderMapView.swift; sourceTree = "<group>"; };
+		CF8DBD4EAFE61A5A1C8D9563 /* EmployeeDirectoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmployeeDirectoryView.swift; path = TreeShopIOSApp/Views/Loadouts/EmployeeDirectoryView.swift; sourceTree = "<group>"; };
+		D65526291712A0E818B365F5 /* MapHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapHelper.swift; path = TreeShopIOSApp/Helpers/MapHelper.swift; sourceTree = "<group>"; };
+		DA3C9E26BB9789BBC52224BE /* TreeShopDataModel.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = TreeShopDataModel.xcdatamodel; sourceTree = "<group>"; };
+		DA6C2A43257333CD5B762D14 /* ProposalDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProposalDetailView.swift; path = TreeShopIOSApp/Views/ProposalDetailView.swift; sourceTree = "<group>"; };
+		E5A51C4267E3C88F3D48CB13 /* TreeInventoryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeInventoryItem.swift; path = TreeShopIOSApp/Models/TreeScore/TreeInventoryItem.swift; sourceTree = "<group>"; };
+		E9EF8C6A962DA5466274395F /* AFISSAssessmentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFISSAssessmentView.swift; path = TreeShopIOSApp/Views/AFISSAssessmentView.swift; sourceTree = "<group>"; };
+		EC1C690F4A2F9AF347F56C3D /* TreeScoreCalculator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TreeScoreCalculator.swift; path = TreeShopIOSApp/Models/TreeScore/TreeScoreCalculator.swift; sourceTree = "<group>"; };
+		FE66BDBB2F11208294654966 /* AddressSearchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddressSearchManager.swift; path = TreeShopIOSApp/Managers/AddressSearchManager.swift; sourceTree = "<group>"; };
+		FF80A0ECF1BB7F6AAC60A71F /* OpsPricingCalculatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpsPricingCalculatorView.swift; path = TreeShopIOSApp/Views/OpsPricingCalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,66 +98,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		002739D60AA64B88FD9B178B /* CoreData */ = {
+		026E2F871B27AC30332D0EB0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9AD18C3E92AF6596A1D84D27 /* CDWorkOrder+CoreDataClass.swift */,
+				1BA2AACA536DACD11D255C16 /* PerformanceOptimizations.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		206CBD8AAAC97710CF7FA4F1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				01200F403721D7C53C2F5F6E /* CDLineItem+CoreDataClass.swift */,
+				A25B2F7B0C8B1565E5BC1A41 /* CDWorkOrder+CoreDataClass.swift */,
+				3AF8FCC5218B1FE40E99F264 /* CDProposal+CoreDataClass.swift */,
+				84350D2E16A2B41B1E51AEFD /* CDCustomer+CoreDataClass.swift */,
+				7B9DB5429CC1717B31DCDAF2 /* PersistenceController.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
 		};
-		1970A548940E28A99C9DFF4C /* Managers */ = {
+		2BBC8B7D5DA777CC106EBB51 /* TreeScore */ = {
 			isa = PBXGroup;
 			children = (
-				5ACA4E6EFDF3DF372E3B0E3C /* AddressSearchManager.swift */,
-				D86CE665AEC72980E32B2C4F /* AFISSManager.swift */,
-			);
-			name = Managers;
-			sourceTree = "<group>";
-		};
-		45CE2C21F1BE40107D619481 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5AC02833E2F589711E48CB90 /* TreeScore */,
-				40FFE9B9DE4E86C6EEBA83C2 /* AFISSModels.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		5AC02833E2F589711E48CB90 /* TreeScore */ = {
-			isa = PBXGroup;
-			children = (
-				7ABB9C2C72FE5D626912BC58 /* TreeScoreCalculator.swift */,
-				666FCA9344B25F79FEDACCCA /* TreeInventoryItem.swift */,
+				EC1C690F4A2F9AF347F56C3D /* TreeScoreCalculator.swift */,
+				E5A51C4267E3C88F3D48CB13 /* TreeInventoryItem.swift */,
 			);
 			name = TreeScore;
 			sourceTree = "<group>";
 		};
-		7FE7A32F18309427D5094297 /* Views */ = {
+		2C0E6C59DADC92FC6439A81A /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
-				B62395DDFD2501C51D5DB74E /* ProposalDetailView.swift */,
-				35B6D9C5462E4BFBE24B9869 /* OpsPricingCalculatorView.swift */,
-				23D2769CFF2821729EC219C9 /* AFISSAssessmentView.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		84EA511E7FC20AD5673C009D /* Scheduling */ = {
-			isa = PBXGroup;
-			children = (
-				6A87EFE5DB28AB6C90BC221A /* EventKitManager.swift */,
-				4DA4BC5F98381B17FC3CE3D8 /* SchedulingView.swift */,
+				309E15A7B8A91E4A6E969ED1 /* SchedulingView.swift */,
+				C120E225C2544B550259A5EE /* EventKitManager.swift */,
 			);
 			name = Scheduling;
 			sourceTree = "<group>";
 		};
-		96685681743FFDE7BF34EB7D /* Helpers */ = {
+		4C4C862C3ADD21F3188C09D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5226158E6D6D6E59CFB23F40 /* MapHelper.swift */,
+				10AA3A4335DEC04978AD4F72 /* CustomersView.swift */,
+				FF80A0ECF1BB7F6AAC60A71F /* OpsPricingCalculatorView.swift */,
+				BDAB081393F01261DDE9AE23 /* Loadouts */,
+				DA6C2A43257333CD5B762D14 /* ProposalDetailView.swift */,
+				30268088C8B1E2FCA8D26D25 /* ProposalsListView.swift */,
+				E9EF8C6A962DA5466274395F /* AFISSAssessmentView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		92EB61596E7F93CD013450C7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D65526291712A0E818B365F5 /* MapHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9CE76463A6055170E502AFE4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				19BE8C231E4B5886AA86CC17 /* LoadoutManager.swift */,
+				00F993754AF9A0140A6495A7 /* AFISSManager.swift */,
+				FE66BDBB2F11208294654966 /* AddressSearchManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		A1A1A1A02B9F000000000020 = {
@@ -154,35 +172,15 @@
 			children = (
 				A1A1A1A02B9F000000000021 /* TreeShopIOSApp */,
 				A1A1A1A02B9F000000000030 /* Products */,
+				C9BD63DDD61C44955C21F1E9 /* TreeShopIOSApp */,
 			);
 			sourceTree = "<group>";
 		};
 		A1A1A1A02B9F000000000021 /* TreeShopIOSApp */ = {
 			isa = PBXGroup;
 			children = (
-				A1A1A1A02B9F000000000001 /* TreeShopIOSAppApp.swift */,
-				A1A1A1A02B9F000000000010 /* MainTabView.swift */,
-				A1A1A1A02B9F000000000002 /* ContentView.swift */,
-				A1A1A1A02B9F000000000003 /* LineItem.swift */,
-				A1A1A1A02B9F000000000004 /* LineItemDetailView.swift */,
-				A1A1A1A02B9F000000000007 /* ProposalGenerator.swift */,
-				A1A1A1A02B9F000000000008 /* ProposalBuilderV2.swift */,
-				A1A1A1A02B9F000000000009 /* PersistenceController.swift */,
-				A1A1A1A02B9F000000000011 /* CustomersView.swift */,
-				A1A1A1A02B9F000000000012 /* ProposalsListView.swift */,
-				A1A1A1A02B9F000000000013 /* CDCustomer+CoreDataClass.swift */,
-				A1A1A1A02B9F000000000014 /* CDProposal+CoreDataClass.swift */,
-				A1A1A1A02B9F000000000015 /* CDLineItem+CoreDataClass.swift */,
-				A1A1A1A02B9F000000000016 /* TreeShopDataModel.xcdatamodeld */,
-				A1A1A1A02B9F000000000005 /* Assets.xcassets */,
-				A1A1A1A02B9F000000000006 /* Info.plist */,
-				F17DA0833E5AE811C7057760 /* Maps */,
-				84EA511E7FC20AD5673C009D /* Scheduling */,
-				002739D60AA64B88FD9B178B /* CoreData */,
-				7FE7A32F18309427D5094297 /* Views */,
-				45CE2C21F1BE40107D619481 /* Models */,
-				1970A548940E28A99C9DFF4C /* Managers */,
-				96685681743FFDE7BF34EB7D /* Helpers */,
+				E2B70D92B15EB197F2EB4DC4 /* TreeShopDataModel.xcdatamodeld */,
+				026E2F871B27AC30332D0EB0 /* Utilities */,
 			);
 			path = TreeShopIOSApp;
 			sourceTree = "<group>";
@@ -195,15 +193,57 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F17DA0833E5AE811C7057760 /* Maps */ = {
+		BDAB081393F01261DDE9AE23 /* Loadouts */ = {
 			isa = PBXGroup;
 			children = (
-				D8C1410A6E10ECDE3537FE24 /* CustomerMapView.swift */,
-				C487D7850A497C61F0358D99 /* LocationPicker.swift */,
-				E73410AEB4F1D1369C3BB296 /* AdvancedWorkOrderMapView.swift */,
-				CE18E3C51BE0777DFB0C5847 /* DrawingManager.swift */,
+				CF8DBD4EAFE61A5A1C8D9563 /* EmployeeDirectoryView.swift */,
+				13C0438D20F71949F75EF685 /* EquipmentDirectoryView.swift */,
+				A4A6F1670B57F861D07199DB /* LoadoutsHubView.swift */,
+				852A92FD9072754B5B73EF3F /* LoadoutManagerView.swift */,
+			);
+			name = Loadouts;
+			sourceTree = "<group>";
+		};
+		C9BD63DDD61C44955C21F1E9 /* TreeShopIOSApp */ = {
+			isa = PBXGroup;
+			children = (
+				D1ED83BB6E4D234D068BFC91 /* Maps */,
+				57E493DEB067126285251659 /* MainTabView.swift */,
+				2C0E6C59DADC92FC6439A81A /* Scheduling */,
+				37E91AE983D735BA610E90E4 /* LineItem.swift */,
+				3DCF52215D13B280C8703BA7 /* TreeShopIOSAppApp.swift */,
+				9CE76463A6055170E502AFE4 /* Managers */,
+				206CBD8AAAC97710CF7FA4F1 /* CoreData */,
+				FAD672F75007E30111AB1EA5 /* Models */,
+				639CC4EFEC6C58DBF7C2A7C6 /* ProposalBuilderV2.swift */,
+				770492D32679CF6712A2BA71 /* ProposalGenerator.swift */,
+				1F99A69B8F201625A26815D0 /* LineItemDetailView.swift */,
+				4C4C862C3ADD21F3188C09D1 /* Views */,
+				B9622D57233309EFB8D97002 /* ContentView.swift */,
+				92EB61596E7F93CD013450C7 /* Helpers */,
+			);
+			name = TreeShopIOSApp;
+			sourceTree = "<group>";
+		};
+		D1ED83BB6E4D234D068BFC91 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				7A7362BA6B6016612D3AD979 /* LocationPicker.swift */,
+				722B29D51B6A85038E0C54A3 /* DrawingManager.swift */,
+				A114458832109047B16573D8 /* CustomerMapView.swift */,
+				C356E9399A772020E09CDB8E /* AdvancedWorkOrderMapView.swift */,
 			);
 			name = Maps;
+			sourceTree = "<group>";
+		};
+		FAD672F75007E30111AB1EA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7771BAF0A3D673DD5575078A /* AFISSModels.swift */,
+				2BBC8B7D5DA777CC106EBB51 /* TreeScore */,
+				B0C98D1B1CBF5283F7C2E348 /* LoadoutModels.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A1A1A52B9F000000000005 /* Assets.xcassets in Resources */,
-				A1A1A1AF2B9F000000000016 /* TreeShopDataModel.xcdatamodeld in Resources */,
+				6B319BE4250194B3249A11DF /* TreeShopDataModel.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,35 +315,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A1A1A12B9F000000000001 /* TreeShopIOSAppApp.swift in Sources */,
-				A1A1A1A22B9F000000000002 /* ContentView.swift in Sources */,
-				A1A1A1A32B9F000000000003 /* LineItem.swift in Sources */,
-				A1A1A1A42B9F000000000004 /* LineItemDetailView.swift in Sources */,
-				A1A1A1A62B9F000000000007 /* ProposalGenerator.swift in Sources */,
-				A1A1A1A72B9F000000000008 /* ProposalBuilderV2.swift in Sources */,
-				A1A1A1A82B9F000000000009 /* PersistenceController.swift in Sources */,
-				A1A1A1A92B9F000000000010 /* MainTabView.swift in Sources */,
-				A1A1A1AA2B9F000000000011 /* CustomersView.swift in Sources */,
-				A1A1A1AB2B9F000000000012 /* ProposalsListView.swift in Sources */,
-				A1A1A1AC2B9F000000000013 /* CDCustomer+CoreDataClass.swift in Sources */,
-				A1A1A1AD2B9F000000000014 /* CDProposal+CoreDataClass.swift in Sources */,
-				A1A1A1AE2B9F000000000015 /* CDLineItem+CoreDataClass.swift in Sources */,
-				25A28D34109084F4B2A8EE1A /* CustomerMapView.swift in Sources */,
-				7F53663A4BB244719E8279C7 /* LocationPicker.swift in Sources */,
-				97C729ADABA5427CCDA11AD5 /* EventKitManager.swift in Sources */,
-				6DB31FD93DA854E68F805F48 /* SchedulingView.swift in Sources */,
-				52AF05C398C13D3B333CF8F1 /* CDWorkOrder+CoreDataClass.swift in Sources */,
-				52E45A0D6B611CCAE05B04B0 /* ProposalDetailView.swift in Sources */,
-				2E9F31E54DB92FF0D70A6D90 /* TreeScoreCalculator.swift in Sources */,
-				AE5319277D501C55572D43C7 /* TreeInventoryItem.swift in Sources */,
-				1B54743ADC70BD6C41275FE2 /* AdvancedWorkOrderMapView.swift in Sources */,
-				5BD93FBFC1E6860F4D1B79F4 /* DrawingManager.swift in Sources */,
-				5642FCA6F2297D1DF36220D5 /* OpsPricingCalculatorView.swift in Sources */,
-				00835CBC6867F6B4E0DA23E4 /* AddressSearchManager.swift in Sources */,
-				51EC332D912C04B78E469664 /* MapHelper.swift in Sources */,
-				002EF1B4FD33EFE189ACE2A6 /* AFISSModels.swift in Sources */,
-				4FAB250E4A8EE554B65E5452 /* AFISSManager.swift in Sources */,
-				F5950747264895C45CD27C13 /* AFISSAssessmentView.swift in Sources */,
+				4B3674B7270BD8B382D23889 /* LocationPicker.swift in Sources */,
+				AFE9AF4BA6E4F9EF5172B903 /* DrawingManager.swift in Sources */,
+				9AB5745318D9FF0D4831405B /* CustomerMapView.swift in Sources */,
+				C63A64CC637C7201A49FDA64 /* AdvancedWorkOrderMapView.swift in Sources */,
+				45694B16B98546EB97A39C4B /* MainTabView.swift in Sources */,
+				071690344EC11B9613E1CC08 /* SchedulingView.swift in Sources */,
+				A8FCB0B5CCCBCDC925ECBF68 /* EventKitManager.swift in Sources */,
+				AC1A0CEBAB4D6F626777B774 /* LineItem.swift in Sources */,
+				6F28CEACEFE2518D4593C5BA /* TreeShopIOSAppApp.swift in Sources */,
+				F68A53AFF2A227CC17F574FB /* LoadoutManager.swift in Sources */,
+				F89076EFFBED2832E21E8902 /* AFISSManager.swift in Sources */,
+				0975A1499F4B1DA5D908630C /* AddressSearchManager.swift in Sources */,
+				4F77C775B1A32549B3A727F5 /* CDLineItem+CoreDataClass.swift in Sources */,
+				681AEB632B528F9F623EF38B /* CDWorkOrder+CoreDataClass.swift in Sources */,
+				92320FD87B3E753C1F9AC5BB /* CDProposal+CoreDataClass.swift in Sources */,
+				D38A3B1CC53BB84A2AE95725 /* CDCustomer+CoreDataClass.swift in Sources */,
+				BCD7BE13D085AA0CAF7373AF /* PersistenceController.swift in Sources */,
+				3FC630E443529EE94FFD4AB5 /* AFISSModels.swift in Sources */,
+				B6FA2650B68D45D89D0DB7F6 /* TreeScoreCalculator.swift in Sources */,
+				F5CCF8A9A09E92909D2B6058 /* TreeInventoryItem.swift in Sources */,
+				A6A089B0589B74C7C4D39318 /* LoadoutModels.swift in Sources */,
+				C6123542B15F036CEE319231 /* ProposalBuilderV2.swift in Sources */,
+				AE618031EC0D6CE7B3818805 /* ProposalGenerator.swift in Sources */,
+				252F2C99642AA444730B7054 /* LineItemDetailView.swift in Sources */,
+				D805F2005A87E27307219470 /* CustomersView.swift in Sources */,
+				1881A74CB72C8CE662D86806 /* OpsPricingCalculatorView.swift in Sources */,
+				BF52FADFCD0DB167E271F29F /* EmployeeDirectoryView.swift in Sources */,
+				3DC920F3086C119129040A9B /* EquipmentDirectoryView.swift in Sources */,
+				001DE6D711E842630566D43E /* LoadoutsHubView.swift in Sources */,
+				EC96753E489FD53E8F8CE802 /* LoadoutManagerView.swift in Sources */,
+				90EB4D9815F17BBFFB4AFAA7 /* ProposalDetailView.swift in Sources */,
+				3A076A6BFF3382EFD66F3424 /* ProposalsListView.swift in Sources */,
+				B9034D1E1CED1375E7823BE6 /* AFISSAssessmentView.swift in Sources */,
+				044971584DFAFDBE62980E75 /* ContentView.swift in Sources */,
+				79D7B0989858CBAA938DAF76 /* MapHelper.swift in Sources */,
+				816BF6588335D0E706E6A21A /* PerformanceOptimizations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +558,18 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E2B70D92B15EB197F2EB4DC4 /* TreeShopDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA3C9E26BB9789BBC52224BE /* TreeShopDataModel.xcdatamodel */,
+			);
+			path = TreeShopDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A1A1A1A02B9F000000000060 /* Project object */;
 }
